@@ -21,5 +21,16 @@ Route::group([
 ], function () {
     
     Route::get('/', [App\Http\Controllers\UserController\TeaController::class, 'index']);
+    Route::get('/login', [App\Http\Controllers\UserController\TeaController::class, 'login'])->name('login');
+    Route::get('/contact-us', [App\Http\Controllers\UserController\TeaController::class, 'contactUs'])->name('contact-us');
     
 });
+
+require __DIR__.'/admin.php';
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
