@@ -75,3 +75,5 @@ $(document).on('click', '#search_button', function () {
     $("#datatable_search").val('');
     location.reload();
 });
+
+$("#alert-message").delay(600).fadeOut(900); // change 5000 to number of seconds in milliseconds

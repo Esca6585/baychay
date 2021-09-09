@@ -27,8 +27,9 @@ class TeaRequest extends FormRequest
             'name_tm' => 'required',
             'name_en' => 'required',
             'name_ru' => 'required',
-            'images' => 'required',
-            'price' => 'required|numeric|min:1|max:9999',
+            'images' => 'array|max:10',
+            'images.*' => 'mimetypes:image/jpeg,image/png,image/jpg',
+            'price' => 'required|numeric|min:0|max:99999',
         ];
     }
 }

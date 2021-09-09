@@ -398,6 +398,7 @@
     "Choose date": "Sene saýla",
     "The :resource was updated!": ":resource üýtgedildi!",
     "The resource was updated!": "Maglumat üýtgedildi!",
+    "The resource was deleted!": "Maglumat pozuldy!",
     "The :resource was deleted!": ":resource pozuldy!",
     "The :resource was restored!": ":resource dikeldildi!",
     "Increase": "Köpelme",
@@ -438,5 +439,7 @@
     "Discount": "Arzanladyş",
     "manat": "manat",
     "Sale Type": "Satuw görnüşi",
-    "unselected": "saýlanmadyk"
+    "unselected": "saýlanmadyk",
+    "Warning": "Duýduryş",
+    "Close": "Ýap"
 }

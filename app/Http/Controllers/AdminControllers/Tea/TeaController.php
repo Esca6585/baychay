@@ -117,7 +117,7 @@ class TeaController extends Controller
             return redirect()->route('tea.index', app()->getlocale())->with('success', 'Your message has been sent successfully!');
         }
 
-        return back()->with('error', 'There was a failure while sending the message!');
+        return back()->with('error', 'There was a problem executing the action.');
     }
 
     /**
@@ -151,8 +151,80 @@ class TeaController extends Controller
      */
     public function update($lang, TeaRequest $request, Tea $tea)
     {
-        //
-        return 'update';
+        try {
+            //code...
+            if($request->file('images')){
+
+                $this->deleteFolder($tea);
+    
+                $images = $request->file('images');
+                
+                $date = date("d-m-Y H-i-s");
+                
+                foreach($images as $key => $image){
+    
+                    $filerandname = Str::random(10);
+                    $fileext = $image->getClientOriginalExtension();
+    
+                    $filename = $filerandname . '.' . $fileext;
+                    
+                    $path = 'assets/tea/' . Str::slug($request->name_tm . '-' . $date . '-updated' ) . '/';
+    
+                    $image->move($path, $filename);
+    
+                    $imageFit = Image::make($path . $filename)->fit(650, 770);
+    
+                    $imageFitName = $filerandname . '-650x770.' . $fileext;
+                
+                    $imageFit->save($path . $imageFitName , 80);
+                    
+                    $original = $path . $filename;
+                    $thumb = $path . $imageFitName;
+    
+                    $imagesArray[] = [
+                        'thumb' => $thumb,
+                        'original' => $original
+                    ];
+    
+                }
+    
+                $tea->name_tm = $request->name_tm;
+                $tea->name_en = $request->name_en;
+                $tea->name_ru = $request->name_ru;
+                $tea->images = $imagesArray;
+                $tea->price = $request->price;
+                $tea->sale_type = $request->sale_type;
+                
+                if($request->discount){
+                    $tea->sale_price = ($request->price - ($request->price*$request->discount/100));
+                    $tea->discount = $request->discount;
+                }
+    
+                $tea->update();
+                
+                return redirect()->route('tea.index', app()->getlocale())->with('success', 'The resource was updated!');
+    
+            } else {
+                
+                $tea->name_tm = $request->name_tm;
+                $tea->name_en = $request->name_en;
+                $tea->name_ru = $request->name_ru;
+                $tea->price = $request->price;
+                $tea->sale_type = $request->sale_type;
+                
+                if($request->discount){
+                    $tea->sale_price = ($request->price - ($request->price*$request->discount/100));
+                    $tea->discount = $request->discount;
+                }
+    
+                $tea->update();
+    
+                return redirect()->route('tea.index', app()->getlocale())->with('success', 'The resource was updated!');
+            }
+        } catch (\Throwable $th) {
+            return back()->with('error', 'There was a problem executing the action.');
+        }
+
     }
 
     /**
@@ -163,6 +235,18 @@ class TeaController extends Controller
      */
     public function destroy($lang, Tea $tea)
     {
-        //
+        $this->deleteFolder($tea);
+        $tea->delete();
+
+        return redirect()->route('tea.index', app()->getlocale())->with('success', 'The resource was deleted!');
+    }
+
+    public function deleteFolder($tea)
+    {
+        foreach($tea->images as $deleteFolder){
+            $folder = explode('/', $deleteFolder->thumb);
+            \File::deleteDirectory($folder[0] . '/' . $folder[1] . '/' . $folder[2]);
+            break;
+        }
     }
 }

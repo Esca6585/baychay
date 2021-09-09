@@ -403,6 +403,7 @@
     "Choose date": "Выбрать дату",
     "The :resource was updated!": "Ресурс :resource обновлён!",
     "The resource was updated!": "Ресурс обновлён!",
+    "The resource was deleted!": "Ресурс удален!",
     "The :resource was deleted!": "Ресурс :resource удален!",
     "The :resource was restored!": "Ресурс :resource восстановлен!",
     "Increase": "Увеличить",
@@ -446,5 +447,7 @@
     "Discount": "Скидка",
     "manat": "манат",
     "Sale Type": "Тип продажи",
-    "unselected": "невыбранный"
+    "unselected": "невыбранный",
+    "Warning": "Предупреждение",
+    "Close": "Закрыть"
 }

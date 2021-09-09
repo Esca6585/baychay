@@ -174,11 +174,21 @@
                                                         <div class="form-group">
                                                             <label>{{ __('Name') }} ({{ $language['name'] }})</label>
 
-                                                            <input type="text" class="form-control"
+                                                            <input type="text"
+                                                                class="form-control @error('name_' . $lang ) is-invalid @enderror"
                                                                 name="name_{{ $lang }}"
                                                                 placeholder="{{ __('Name') }} ({{ $language['name'] }})..."
                                                                 value="{{ $tea->{'name_' . $lang } }}" />
+
+                                                            @error('name_' . $lang )
+                                                            <div class="fv-plugins-message-container invalid-feedback">
+                                                                <div data-field="email" data-validator="notEmpty">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            </div>
+                                                            @enderror
                                                         </div>
+
                                                     </div>
                                                     @endforeach
 
@@ -186,9 +196,17 @@
                                                         <div class="form-group">
                                                             <label>{{ __('Price') }}</label>
 
-                                                            <input type="text" class="form-control" name="price"
-                                                                placeholder="{{ __('Price') }}..."
+                                                            <input type="text"
+                                                                class="form-control @error('price') is-invalid @enderror"
+                                                                name="price" placeholder="{{ __('Price') }}..."
                                                                 value="{{ $tea->price }}" />
+                                                            @error('price')
+                                                            <div class="fv-plugins-message-container invalid-feedback">
+                                                                <div data-field="email" data-validator="notEmpty">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            </div>
+                                                            @enderror
                                                         </div>
                                                     </div>
 
@@ -196,9 +214,18 @@
                                                         <div class="form-group">
                                                             <label>{{ __('Discount') }} %</label>
 
-                                                            <input type="text" class="form-control" name="discount"
-                                                                placeholder="{{ __('Discount') }} % ..."
+                                                            <input type="text"
+                                                                class="form-control @error('discount') is-invalid @enderror"
+                                                                name="discount" placeholder="{{ __('Discount') }} % ..."
                                                                 value="{{ $tea->discount }}" />
+
+                                                            @error('discount')
+                                                            <div class="fv-plugins-message-container invalid-feedback">
+                                                                <div data-field="email" data-validator="notEmpty">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            </div>
+                                                            @enderror
                                                         </div>
                                                     </div>
 
@@ -206,15 +233,22 @@
                                                         <div class="form-group">
                                                             <label>{{ __('Sale Type') }}</label>
 
-                                                            <select name="sale_type" id="" class="form-control">
+                                                            <select name="sale_type" id=""
+                                                                class="form-control @error('sale_type') is-invalid @enderror">
                                                                 <option value=""
                                                                     {{ $tea->sale_type ? 'selected' : '' }}>--
                                                                     {{ __('unselected') }} --</option>
                                                                 <option value="New"
                                                                     {{ $tea->sale_type ? 'selected' : '' }}>
                                                                     {{ __('New') }}</option>
-
                                                             </select>
+                                                            @error('sale_type')
+                                                            <div class="fv-plugins-message-container invalid-feedback">
+                                                                <div data-field="email" data-validator="notEmpty">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            </div>
+                                                            @enderror
                                                         </div>
                                                     </div>
 
@@ -223,43 +257,54 @@
                                                             <label>{{ __('Img') }}</label>
 
                                                             <input type="file" name="images[]" id=""
-                                                                class="form-control" multiple>
+                                                                class="form-control @error('images') is-invalid @enderror"
+                                                                multiple>
+                                                            @error('images')
+                                                            <div class="fv-plugins-message-container invalid-feedback">
+                                                                <div data-field="email" data-validator="notEmpty">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            </div>
+                                                            @enderror
                                                         </div>
                                                     </div>
 
                                                     @if($tea->images)
-                                                        @foreach($tea->images as $key => $image)
-                                                            <div class="image-input image-input-outline" id="kt_image_4"
-                                                                style="background-image: url({{ asset('metronic-template/v7/assets/media/users/blank.png') }})">
-                                                                <div class="image-input-wrapper"
-                                                                    style="background-image: url({{ asset($image->original) }})">
-                                                                </div>
-
-                                                                <label
-                                                                    class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
-                                                                    data-action="change" data-toggle="tooltip" title=""
-                                                                    data-original-title="Change avatar">
-                                                                    <i class="fa fa-pen icon-sm text-muted"></i>
-                                                                    <input type="file" name="profile_avatar"
-                                                                        accept=".png, .jpg, .jpeg" />
-                                                                    <input type="hidden" name="profile_avatar_remove" />
-                                                                </label>
-
-                                                                <span
-                                                                    class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
-                                                                    data-action="cancel" data-toggle="tooltip"
-                                                                    title="Cancel avatar">
-                                                                    <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                                                </span>
-
-                                                                <span
-                                                                    class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
-                                                                    data-action="remove" data-toggle="tooltip"
-                                                                    title="Remove avatar">
-                                                                    <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                                                </span>
+                                                    @foreach($tea->images as $key => $image)
+                                                    <div class="col m-5">
+                                                        <div class="image-input image-input-outline" id="kt_image_{{ $key }}" data-images-count="{{ count($tea->images) }}"
+                                                            style="background-image: url({{ asset('metronic-template/v7/assets/media/users/blank.png') }})">
+                                                            <div class="image-input-wrapper"
+                                                                style="background-image: url({{ asset($image->original) }})">
                                                             </div>
-                                                        @endforeach
+
+                                                            <label
+                                                                class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
+                                                                data-action="change" data-toggle="tooltip" title=""
+                                                                data-original-title="Change avatar">
+                                                                <i class="fa fa-pen icon-sm text-muted"></i>
+                                                                <input type="file" name="profile_avatar"
+                                                                    accept=".png, .jpg, .jpeg" />
+
+                                                                <input type="hidden" name="profile_avatar_remove" />
+                                                            </label>
+
+                                                            <span
+                                                                class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
+                                                                data-action="cancel" data-toggle="tooltip"
+                                                                title="Cancel avatar">
+                                                                <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                                            </span>
+
+                                                            <span
+                                                                class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
+                                                                data-action="remove" data-toggle="tooltip"
+                                                                title="Remove avatar">
+                                                                <i class="ki ki-bold-close icon-xs text-muted"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    @endforeach
                                                     @endif
 
 

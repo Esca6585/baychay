@@ -7,7 +7,6 @@
 @section('body')
 
 <!--begin::Body-->
-
 <body id="kt_body"
     class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
     <!--begin::Main-->
@@ -114,16 +113,17 @@
                                 <div class="d-flex align-items-baseline flex-wrap mr-5">
                                     <!--begin::Page Title-->
                                     <h5 class="text-dark font-weight-bold my-1 mr-5">
-                                        
+
                                     </h5>
                                     <!--end::Page Title-->
                                     <!--begin::Breadcrumb-->
                                     <ul
                                         class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                                         <li class="breadcrumb-item text-muted">
-                                            <a href="{{ route(Route::currentRouteName(), app()->getlocale() ) }}" class="text-muted">{{ __('Tea') }}</a>
+                                            <a href="{{ route(Route::currentRouteName(), app()->getlocale() ) }}"
+                                                class="text-muted">{{ __('Tea') }}</a>
                                         </li>
-                                        
+
                                     </ul>
                                     <!--end::Breadcrumb-->
                                 </div>
@@ -146,7 +146,8 @@
                                     </div>
                                     <div class="card-toolbar">
                                         <!--begin::Button-->
-                                        <a href="{{ route(Request::segment(3) . '.create', app()->getlocale() ) }}" class="btn font-weight-bolder">
+                                        <a href="{{ route(Request::segment(3) . '.create', app()->getlocale() ) }}"
+                                            class="btn font-weight-bolder">
                                             <span class="svg-icon svg-icon-xl">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
@@ -164,17 +165,27 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between">
-                                        
+
                                         <div class="dataTables_length" id="kt_datatable_length">
                                             <label>
-                                                <select id="datatable_length" name="datatable_length" aria-controls="kt_datatable" class="custom-select custom-select-sm form-control form-control-sm">
-                                                    <option class="bs-title-option" value="5"  {{ $pagination == 5 ? 'selected' : '' }} >5</option>
-                                                    <option class="bs-title-option" value="10" {{ $pagination == 10 ? 'selected' : '' }} >10</option>
-                                                    <option class="bs-title-option" value="15" {{ $pagination == 15 ? 'selected' : '' }} >15</option>
-                                                    <option class="bs-title-option" value="20" {{ $pagination == 20 ? 'selected' : '' }} >20</option>
-                                                    <option class="bs-title-option" value="25" {{ $pagination == 25 ? 'selected' : '' }} >25</option>
-                                                    <option class="bs-title-option" value="50" {{ $pagination == 50 ? 'selected' : '' }} >50</option>
-                                                    <option class="bs-title-option" value="100 {{ $pagination == 100 ? 'selected' : '' }} ">100</option>
+                                                <select id="datatable_length" name="datatable_length"
+                                                    aria-controls="kt_datatable"
+                                                    class="custom-select custom-select-sm form-control form-control-sm">
+                                                    <option class="bs-title-option" value="5"
+                                                        {{ $pagination == 5 ? 'selected' : '' }}>5</option>
+                                                    <option class="bs-title-option" value="10"
+                                                        {{ $pagination == 10 ? 'selected' : '' }}>10</option>
+                                                    <option class="bs-title-option" value="15"
+                                                        {{ $pagination == 15 ? 'selected' : '' }}>15</option>
+                                                    <option class="bs-title-option" value="20"
+                                                        {{ $pagination == 20 ? 'selected' : '' }}>20</option>
+                                                    <option class="bs-title-option" value="25"
+                                                        {{ $pagination == 25 ? 'selected' : '' }}>25</option>
+                                                    <option class="bs-title-option" value="50"
+                                                        {{ $pagination == 50 ? 'selected' : '' }}>50</option>
+                                                    <option class="bs-title-option"
+                                                        value="100 {{ $pagination == 100 ? 'selected' : '' }} ">100
+                                                    </option>
                                                 </select>
                                             </label>
                                         </div>
@@ -186,11 +197,20 @@
                                                         <span class="input-group-text" id="search_button">
                                                             <span class="svg-icon svg-icon-lg">
                                                                 <!--begin::Svg Icon | path:assets/media/svg/icons/General/Search.svg-->
-                                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                    width="24px" height="24px" viewBox="0 0 24 24"
+                                                                    version="1.1">
+                                                                    <g stroke="none" stroke-width="1" fill="none"
+                                                                        fill-rule="evenodd">
                                                                         <rect x="0" y="0" width="24" height="24" />
-                                                                        <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                                                        <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero" />
+                                                                        <path
+                                                                            d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z"
+                                                                            fill="#000000" fill-rule="nonzero"
+                                                                            opacity="0.3" />
+                                                                        <path
+                                                                            d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z"
+                                                                            fill="#000000" fill-rule="nonzero" />
                                                                     </g>
                                                                 </svg>
                                                                 <!--end::Svg Icon-->
@@ -198,16 +218,26 @@
                                                         </span>
                                                     </div>
 
-                                                    <input type="search" class="form-control" id="datatable_search" placeholder="{{ __('Search') }}...">
+                                                    <input type="search" class="form-control" id="datatable_search"
+                                                        placeholder="{{ __('Search') }}...">
 
                                                     <div class="input-group-append">
                                                         <span class="input-group-text" id="search_clear">
                                                             <!--begin::Svg Icon | public/metronic-template/v8/assets/media/icons/duotone/Navigation/Close.svg-->
                                                             <span class="svg-icon svg-icon-lg">
-                                                                <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                                    <g id="Group" transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)" fill="#000000">
-                                                                        <rect fill="#000000" id="Rectangle-185" x="0" y="7" width="16" height="2" rx="1"></rect>
-                                                                        <rect fill="#000000" id="Rectangle-185-Copy" opacity="0.5" transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000) " x="0" y="7" width="16" height="2" rx="1"></rect>
+                                                                <svg width="24px" height="24px" viewBox="0 0 24 24"
+                                                                    version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                                    <g id="Group"
+                                                                        transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)"
+                                                                        fill="#000000">
+                                                                        <rect fill="#000000" id="Rectangle-185" x="0"
+                                                                            y="7" width="16" height="2" rx="1"></rect>
+                                                                        <rect fill="#000000" id="Rectangle-185-Copy"
+                                                                            opacity="0.5"
+                                                                            transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000) "
+                                                                            x="0" y="7" width="16" height="2" rx="1">
+                                                                        </rect>
                                                                     </g>
                                                                 </svg>
                                                                 <!--end::Svg Icon-->
@@ -220,6 +250,22 @@
                                         </div>
                                     </div>
 
+                                    @if(session()->has('success'))
+                                    <div class="alert alert-fixed alert-custom alert-light-success fade show mb-5" id="alert-message" role="alert">
+                                        <div class="alert-icon">
+                                            <i class="flaticon-warning"></i>
+                                        </div>
+                                        <div class="alert-text">{{ __(session()->get('success')) }}</div>
+                                        <div class="alert-close">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">
+                                                    <i class="ki ki-close"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    @endif
+                                    
                                     <!--begin: Datatable-->
                                     <div id="datatable">
                                         <table class="table table-separate table-head-custom table-checkable">
@@ -244,29 +290,33 @@
                                                     <td>{{ $tea->name_en }}</td>
                                                     <td>{{ $tea->name_ru }}</td>
                                                     <td>
-                                                        <span class="label label-lg font-weight-bold label-{{ $tea->sale_price ? 'light-danger' : 'light-success' }} label-inline">
+                                                        <span
+                                                            class="label label-lg font-weight-bold label-{{ $tea->sale_price ? 'light-danger' : 'light-success' }} label-inline">
                                                             @if($tea->sale_price)
-                                                                <del>{{ $tea->price }} {{ __('manat') }}</del>
+                                                            <del>{{ $tea->price }} {{ __('manat') }}</del>
                                                             @else
-                                                                {{ $tea->price }} {{ __('manat') }}
+                                                            {{ $tea->price }} {{ __('manat') }}
                                                             @endif
                                                         </span>
                                                     </td>
                                                     <td>
                                                         @if($tea->sale_price)
-                                                            <span class="label label-lg font-weight-bold label-success label-inline">
-                                                                {{ $tea->sale_price }} {{ __('manat') }}
-                                                            </span>
+                                                        <span
+                                                            class="label label-lg font-weight-bold label-success label-inline">
+                                                            {{ $tea->sale_price }} {{ __('manat') }}
+                                                        </span>
                                                         @endif
                                                     </td>
                                                     <td>
                                                         @if($tea->discount)
-                                                            <span class="label label-lg font-weight-bold label-danger label-inline">-{{ __($tea->discount) }}%</span>
+                                                        <span
+                                                            class="label label-lg font-weight-bold label-danger label-inline">-{{ __($tea->discount) }}%</span>
                                                         @endif
                                                     </td>
                                                     <td>
                                                         @if($tea->sale_type)
-                                                            <span class="label label-lg font-weight-bold label-success label-inline">{{ __($tea->sale_type) }}</span>
+                                                        <span
+                                                            class="label label-lg font-weight-bold label-success label-inline">{{ __($tea->sale_type) }}</span>
                                                         @endif
                                                     </td>
                                                     <td>@include('layouts.admin.action')</td>
