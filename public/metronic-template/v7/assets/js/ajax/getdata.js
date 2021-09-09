@@ -76,4 +76,4 @@ $(document).on('click', '#search_button', function () {
     location.reload();
 });
 
-$("#alert-message").delay(600).fadeOut(900); // change 5000 to number of seconds in milliseconds
+$("#alert-message").delay(2000).fadeOut(1000); // change 5000 to number of seconds in milliseconds

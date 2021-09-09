@@ -37,9 +37,28 @@
         type="text/css" />
     <link href="{{ asset('metronic-template/v7/assets/css/themes/layout/aside/dark.css') }}" rel="stylesheet"
         type="text/css" />
-
     <!--end::Layout Themes-->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('baychay-template/img/favicon.ico') }}">
+
+    <style>
+        .odd {
+            background: var(--light);
+        }
+
+        .even {
+            background: var(--white);
+        }
+
+        .alert-fixed {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 20%;
+            z-index: 9999;
+            border-radius: 0px
+        }
+    </style>
+
 </head>
 <!--end::Head-->
 <!--begin::Body-->

@@ -178,7 +178,7 @@
                                                                 class="form-control @error('name_' . $lang ) is-invalid @enderror"
                                                                 name="name_{{ $lang }}"
                                                                 placeholder="{{ __('Name') }} ({{ $language['name'] }})..."
-                                                                value="{{ $tea->{'name_' . $lang } }}" />
+                                                                value="{{ $tea->{'name_' . $lang } }}{{ request()->segment(count(request()->segments())) == 'create' ? old('name_' . $lang) : '' }}" />
 
                                                             @error('name_' . $lang )
                                                             <div class="fv-plugins-message-container invalid-feedback">
@@ -199,7 +199,7 @@
                                                             <input type="text"
                                                                 class="form-control @error('price') is-invalid @enderror"
                                                                 name="price" placeholder="{{ __('Price') }}..."
-                                                                value="{{ $tea->price }}" />
+                                                                value="{{ $tea->price }}{{ request()->segment(count(request()->segments())) == 'create' ? old('price') : '' }}" />
                                                             @error('price')
                                                             <div class="fv-plugins-message-container invalid-feedback">
                                                                 <div data-field="email" data-validator="notEmpty">
@@ -217,7 +217,7 @@
                                                             <input type="text"
                                                                 class="form-control @error('discount') is-invalid @enderror"
                                                                 name="discount" placeholder="{{ __('Discount') }} % ..."
-                                                                value="{{ $tea->discount }}" />
+                                                                value="{{ $tea->discount }}{{ request()->segment(count(request()->segments())) == 'create' ? old('discount') : '' }}" />
 
                                                             @error('discount')
                                                             <div class="fv-plugins-message-container invalid-feedback">
@@ -272,7 +272,9 @@
                                                     @if($tea->images)
                                                     @foreach($tea->images as $key => $image)
                                                     <div class="col m-5">
-                                                        <div class="image-input image-input-outline" id="kt_image_{{ $key }}" data-images-count="{{ count($tea->images) }}"
+                                                        <div class="image-input image-input-outline"
+                                                            id="kt_image_{{ $key }}"
+                                                            data-images-count="{{ count($tea->images) }}"
                                                             style="background-image: url({{ asset('metronic-template/v7/assets/media/users/blank.png') }})">
                                                             <div class="image-input-wrapper"
                                                                 style="background-image: url({{ asset($image->original) }})">

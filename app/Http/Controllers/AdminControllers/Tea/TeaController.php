@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Http\Requests\TeaRequest;
+use App\Http\Requests\TeaUpdateRequest;
 use App\Models\Tea;
 use Hash;
 use Str;
@@ -64,8 +65,8 @@ class TeaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(TeaRequest $request)
-    {   
+    public function store(TeaUpdateRequest $request)
+    {
         if($request->file('images')){
             $images = $request->file('images');
             
@@ -114,10 +115,10 @@ class TeaController extends Controller
 
             $tea->save();
             
-            return redirect()->route('tea.index', app()->getlocale())->with('success', 'Your message has been sent successfully!');
+            return redirect()->route('tea.index', app()->getlocale())->with('success-create', 'The resource was created!');
         }
 
-        return back()->with('error', 'There was a problem executing the action.');
+        return back()->with('error-create', 'no image selected');
     }
 
     /**
@@ -151,80 +152,74 @@ class TeaController extends Controller
      */
     public function update($lang, TeaRequest $request, Tea $tea)
     {
-        try {
-            //code...
-            if($request->file('images')){
+        if($request->file('images')){
 
-                $this->deleteFolder($tea);
-    
-                $images = $request->file('images');
+            $this->deleteFolder($tea);
+
+            $images = $request->file('images');
+            
+            $date = date("d-m-Y H-i-s");
+            
+            foreach($images as $key => $image){
+
+                $filerandname = Str::random(10);
+                $fileext = $image->getClientOriginalExtension();
+
+                $filename = $filerandname . '.' . $fileext;
                 
-                $date = date("d-m-Y H-i-s");
+                $path = 'assets/tea/' . Str::slug($request->name_tm . '-' . $date . '-updated' ) . '/';
+
+                $image->move($path, $filename);
+
+                $imageFit = Image::make($path . $filename)->fit(650, 770);
+
+                $imageFitName = $filerandname . '-650x770.' . $fileext;
+            
+                $imageFit->save($path . $imageFitName , 80);
                 
-                foreach($images as $key => $image){
-    
-                    $filerandname = Str::random(10);
-                    $fileext = $image->getClientOriginalExtension();
-    
-                    $filename = $filerandname . '.' . $fileext;
-                    
-                    $path = 'assets/tea/' . Str::slug($request->name_tm . '-' . $date . '-updated' ) . '/';
-    
-                    $image->move($path, $filename);
-    
-                    $imageFit = Image::make($path . $filename)->fit(650, 770);
-    
-                    $imageFitName = $filerandname . '-650x770.' . $fileext;
-                
-                    $imageFit->save($path . $imageFitName , 80);
-                    
-                    $original = $path . $filename;
-                    $thumb = $path . $imageFitName;
-    
-                    $imagesArray[] = [
-                        'thumb' => $thumb,
-                        'original' => $original
-                    ];
-    
-                }
-    
-                $tea->name_tm = $request->name_tm;
-                $tea->name_en = $request->name_en;
-                $tea->name_ru = $request->name_ru;
-                $tea->images = $imagesArray;
-                $tea->price = $request->price;
-                $tea->sale_type = $request->sale_type;
-                
-                if($request->discount){
-                    $tea->sale_price = ($request->price - ($request->price*$request->discount/100));
-                    $tea->discount = $request->discount;
-                }
-    
-                $tea->update();
-                
-                return redirect()->route('tea.index', app()->getlocale())->with('success', 'The resource was updated!');
-    
-            } else {
-                
-                $tea->name_tm = $request->name_tm;
-                $tea->name_en = $request->name_en;
-                $tea->name_ru = $request->name_ru;
-                $tea->price = $request->price;
-                $tea->sale_type = $request->sale_type;
-                
-                if($request->discount){
-                    $tea->sale_price = ($request->price - ($request->price*$request->discount/100));
-                    $tea->discount = $request->discount;
-                }
-    
-                $tea->update();
-    
-                return redirect()->route('tea.index', app()->getlocale())->with('success', 'The resource was updated!');
+                $original = $path . $filename;
+                $thumb = $path . $imageFitName;
+
+                $imagesArray[] = [
+                    'thumb' => $thumb,
+                    'original' => $original
+                ];
+
             }
-        } catch (\Throwable $th) {
-            return back()->with('error', 'There was a problem executing the action.');
-        }
 
+            $tea->name_tm = $request->name_tm;
+            $tea->name_en = $request->name_en;
+            $tea->name_ru = $request->name_ru;
+            $tea->images = $imagesArray;
+            $tea->price = $request->price;
+            $tea->sale_type = $request->sale_type;
+            
+            if($request->discount){
+                $tea->sale_price = ($request->price - ($request->price*$request->discount/100));
+                $tea->discount = $request->discount;
+            }
+
+            $tea->update();
+            
+            return redirect()->route('tea.index', app()->getlocale())->with('success-update', 'The resource was updated!');
+
+        } else {
+            
+            $tea->name_tm = $request->name_tm;
+            $tea->name_en = $request->name_en;
+            $tea->name_ru = $request->name_ru;
+            $tea->price = $request->price;
+            $tea->sale_type = $request->sale_type;
+            
+            if($request->discount){
+                $tea->sale_price = ($request->price - ($request->price*$request->discount/100));
+                $tea->discount = $request->discount;
+            }
+
+            $tea->update();
+
+            return redirect()->route('tea.index', app()->getlocale())->with('success-update', 'The resource was updated!');
+        }
     }
 
     /**
@@ -238,7 +233,7 @@ class TeaController extends Controller
         $this->deleteFolder($tea);
         $tea->delete();
 
-        return redirect()->route('tea.index', app()->getlocale())->with('success', 'The resource was deleted!');
+        return redirect()->route('tea.index', app()->getlocale())->with('success-delete', 'The resource was deleted!');
     }
 
     public function deleteFolder($tea)
