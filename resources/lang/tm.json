@@ -111,6 +111,7 @@
     "The government won't let us show you what's behind these doors": "Hökümet, ýapyk gapylar arkasynda nämeler bolup geçýänini bize görkezmez.",
     "This image": "Şu surat",
     "img": "surat",
+    "Img": "Surat",
     "Update": "Ýatda sakla",
     "Submit": "Iberiň",
     "Continue": "Dowam et",
@@ -431,5 +432,11 @@
     ":amount Total": ":amount jemi",
     "Show All Fields": "Ähli sütünleri görkez",
     "There was a problem submitting the form.": "Formy ýatda saklamakda bir näsazlyk ýüze çykdy.",
-    "There was a problem executing the action.": "Bu herekedi amala aşyrmakda bir näsazlyk ýüze çykdy."
+    "There was a problem executing the action.": "Bu herekedi amala aşyrmakda bir näsazlyk ýüze çykdy.",
+    "Price": "Bahasy",
+    "Sale Price": "Satuw Bahasy",
+    "Discount": "Arzanladyş",
+    "manat": "manat",
+    "Sale Type": "Satuw görnüşi",
+    "unselected": "saýlanmadyk"
 }

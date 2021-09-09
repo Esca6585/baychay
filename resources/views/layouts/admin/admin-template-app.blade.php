@@ -29,7 +29,6 @@
 		<link href="{{ asset('metronic-template/v7/assets/css/themes/layout/aside/dark.css') }}" rel="stylesheet" type="text/css" />
 		
 		<!--end::Layout Themes-->
-		{{-- <link rel="shortcut icon" href="{{ asset('metronic-template/v7/assets/media/logos/favicon.ico') }}" /> --}}
 		<link rel="shortcut icon" type="image/x-icon" href="{{ asset('baychay-template/img/favicon.ico') }}">
 
 

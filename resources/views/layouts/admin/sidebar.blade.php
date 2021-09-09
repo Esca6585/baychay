@@ -20,7 +20,7 @@
                     <span class="menu-text">{{ __('Dashboard') }}</span>
                 </a>
             </li>
-            <li class="menu-item {{ Request::is('*/admin/tea') ? 'menu-item-active' : '' }}" aria-haspopup="true">
+            <li class="menu-item {{ Request::is('*/admin/tea*') ? 'menu-item-active' : '' }}" aria-haspopup="true">
                 <a href="{{ route('tea.index', app()->getlocale() ) }}" class="menu-link">
                     <span class="svg-icon menu-icon">
                         <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo2/dist/../src/media/svg/icons/Food/Coffee1.svg-->

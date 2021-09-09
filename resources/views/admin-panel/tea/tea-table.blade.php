@@ -1,3 +1,4 @@
+<!--begin: Datatable-->
 <div id="datatable">
     <table class="table table-separate table-head-custom table-checkable">
         <thead>
@@ -6,35 +7,58 @@
                 @foreach (Config::get('languages') as $lang => $language)
                 <th>{{ __('Name') }} ({{ $language['name'] }})</th>
                 @endforeach
-                <th>icon-{{ __('name') }}</th>
-                <th>icon-{{ __('img') }}</th>
-                <th>{{ __('Parent Category') }} ID</th>
+                <th>{{ __('Price') }}</th>
+                <th>{{ __('Sale Price') }}</th>
+                <th>{{ __('Discount') }}</th>
+                <th>{{ __('Sale Type') }}</th>
                 <th>{{ __('Actions') }}</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($categories as $category)
+            @foreach ($teas as $tea)
             <tr id="datatable">
                 <td>{{ $loop->iteration }}</td>
-                <td>{{ $category->name_tm }}</td>
-                <td>{{ $category->name_en }}</td>
-                <td>{{ $category->name_ru }}</td>
-                <td>{{ $category->icon_name }}</td>
-                <td>{{ $category->icon_img }}</td>
+                <td>{{ $tea->name_tm }}</td>
+                <td>{{ $tea->name_en }}</td>
+                <td>{{ $tea->name_ru }}</td>
                 <td>
-                    <a href="{{ $category->parent ? route( Request::segment(4) . '.show', [ app()->getlocale(), $category->parent_id ]) : route( Request::segment(4) . '.show', [ app()->getlocale(), $category->id ]) }}" class="{{ $category->parent ? 'text-warning' : 'text-primary' }}">
-                        {{ $category->parent ? $category->parent->{ 'name_' . app()->getlocale() } : __('Parent Category') }}
-                    </a>
+                    <span
+                        class="label label-lg font-weight-bold label-{{ $tea->sale_price ? 'light-danger' : 'light-success' }} label-inline">
+                        @if($tea->sale_price)
+                        <del>{{ $tea->price }} {{ __('manat') }}</del>
+                        @else
+                        {{ $tea->price }} {{ __('manat') }}
+                        @endif
+                    </span>
                 </td>
-                <td>@include('layouts.action')</td>
+                <td>
+                    @if($tea->sale_price)
+                    <span class="label label-lg font-weight-bold label-success label-inline">
+                        {{ $tea->sale_price }} {{ __('manat') }}
+                    </span>
+                    @endif
+                </td>
+                <td>
+                    @if($tea->discount)
+                    <span class="label label-lg font-weight-bold label-danger label-inline">-{{ __($tea->discount) }}%</span>
+                    @endif
+                </td>
+                <td>
+                    @if($tea->sale_type)
+                    <span
+                        class="label label-lg font-weight-bold label-success label-inline">{{ __($tea->sale_type) }}</span>
+                    @endif
+                </td>
+                <td>@include('layouts.admin.action')</td>
             </tr>
             @endforeach
         </tbody>
     </table>
-    {{-- {{ dump($categories) }} --}}
+
     <div class="d-flex justify-content-end">
         <div>
-            {{ $categories->links('layouts.pagination') }}
+            {{ $teas->links('layouts.admin.pagination') }}
         </div>
-    </div>                                
+    </div>
 </div>
+<!--end: Datatable-->

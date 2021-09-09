@@ -16,8 +16,6 @@ Route::group([
     Route::prefix('admin')->group(function (){
         Route::get('/dashboard', [App\Http\Controllers\AdminControllers\Dashboard\DashboardController::class, 'index'])->name('admin.dashboard');
 
-        Route::get('/tea/getdata/{pagination}', [App\Http\Controllers\AdminControllers\Tea\TeaController::class, 'getData'])->name('tea.getdata');
-        
         Route::resources([
             '/tea' => App\Http\Controllers\AdminControllers\Tea\TeaController::class,
         ]);

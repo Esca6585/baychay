@@ -2,8 +2,15 @@ $(document).on('click', '.page-link', function (event) {
     event.preventDefault();
     var page = $(this).attr('href').split('page=')[1];
     var pagination = $("#datatable_length").val();
+    var search = $("#datatable_search").val();
 
-    getMoreData(page, pagination);
+    if(search != '')
+    {
+        getSearchData(search, pagination, page);
+    }
+    else{
+        getMoreData(page, pagination);
+    }
 });
 
 function getMoreData(page, pagination) {
@@ -22,7 +29,7 @@ function getMoreData(page, pagination) {
 $("#datatable_length").on('change',function(){
     var pagination = $("#datatable_length").val();
 
-    getPaginationData(pagination);    
+    getPaginationData(pagination);
 });
 
 function getPaginationData(pagination) {
@@ -41,13 +48,13 @@ function getPaginationData(pagination) {
 $("#datatable_search").keyup(function () {
     var search = $("#datatable_search").val();
     var pagination = $("#datatable_length").val();
+    var page = $('.page-link').attr('href').split('page=')[1];
     
-    getSearchData(search, pagination);
+    getSearchData(search, pagination, page);
 });
 
-function getSearchData(search, pagination){
-    var data = 'search=' + search + '&pagination=' + pagination;
-    console.log(data);
+function getSearchData(search, pagination, page){
+    var data = 'search=' + search + '&pagination=' + pagination + '&page=' + page;
 
     $.ajax({
         type: "GET",
@@ -58,3 +65,13 @@ function getSearchData(search, pagination){
         }
     });
 }
+
+$(document).on('click', '#search_clear', function () {
+    $("#datatable_search").val('');
+    location.reload();
+});
+
+$(document).on('click', '#search_button', function () {
+    $("#datatable_search").val('');
+    location.reload();
+});

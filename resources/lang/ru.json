@@ -111,6 +111,7 @@
     "The government won't let us show you what's behind these doors": "Правительство не позволит показать вам то, что расположено за этими дверями.",
     "This image": "Это изображение",
     "img": "изображение",
+    "Img": "Изображение",
     "Update": "Обновить",
     "Submit": "Отправить",
     "Continue": "Продолжать",
@@ -439,5 +440,11 @@
     "There was a problem submitting the form.": "Во время отправки формы возникла проблема.",
     "There was a problem executing the action.": "Во время выполнения действия возникла проблема.",
     "The file was deleted!": "Файл был удалён!",
-    "This file field is read-only.": "Это поле для файла доступно только для чтения."
+    "This file field is read-only.": "Это поле для файла доступно только для чтения.",
+    "Price": "Цена",
+    "Sale Price": "Цена продажи",
+    "Discount": "Скидка",
+    "manat": "манат",
+    "Sale Type": "Тип продажи",
+    "unselected": "невыбранный"
 }

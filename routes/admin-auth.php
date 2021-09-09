@@ -22,7 +22,6 @@ Route::group([
         // Logout route
         Route::post('/logout', [App\Http\Controllers\Auth\AdminLogoutController::class, 'logout'])->name('admin.logout');
         
-        Route::get('/dashboard', [App\Http\Controllers\AdminController\AdminController::class, 'dashboard'])->name('admin.dashboard');
     });
     
 });

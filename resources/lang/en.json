@@ -111,6 +111,7 @@
     "The government won't let us show you what's behind these doors": "The government won't let us show you what's behind these doors",
     "This image": "This image",
     "img": "image",
+    "Img": "Image",
     "Update": "Update",
     "Submit": "Submit",
     "Continue": "Continue",
@@ -457,5 +458,11 @@
     "Start Polling": "Start Polling",
     "Stop Polling": "Stop Polling",
     "The HasOne relationship has already been filled.": "The HasOne relationship has already been filled.",
-    "An error occured while uploading the file.": "An error occured while uploading the file."
+    "An error occured while uploading the file.": "An error occured while uploading the file.",
+    "Price": "Price",
+    "Sale Price": "Sale Price",
+    "Discount": "Discount",
+    "manat": "manat",
+    "Sale Type": "Sale Type",
+    "unselected": "unselected"
 }

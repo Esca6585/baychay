@@ -14,8 +14,8 @@
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
-                    <li class="menu-item {{ Request::is('*/admin/tea') ? 'menu-item-active' : '' }}">
-                        <a href="{{ route('admin.dashboard', app()->getlocale() ) }}" class="menu-link">
+                    <li class="menu-item {{ Request::is('*/admin/tea*') ? 'menu-item-active' : '' }}">
+                        <a href="{{ route('tea.index', app()->getlocale() ) }}" class="menu-link">
                             <span class="menu-text">{{ __('Tea') }}</span>
                             <i class="menu-arrow"></i>
                         </a>
@@ -99,15 +99,15 @@
                         @endforeach
                     </div>
                 </div>
+                <!--begin::Nav-->
                 <!--end::Toggle-->
                 <!--begin::Dropdown-->
                 <div class="dropdown-menu p-0 m-0 dropdown-menu-anim-up dropdown-menu-sm dropdown-menu-right">
-                    <!--begin::Nav-->
                     <ul class="navi navi-hover py-4">
                         @foreach (Config::get('languages') as $lang => $language)
                             <!--begin::Item-->
                             <li class="navi-item">
-                                <a href="{{ route(Route::currentRouteName(), $lang ) }}" class="navi-link">
+                                <a href="{{ route(Route::currentRouteName(), [$lang, $tea->id ?? '' ] ) }}" class="navi-link">
                                     <span class="symbol symbol-20 mr-3">
                                         <img src="{{ asset('metronic-template/v7/assets/media/svg/flags/' . $language['icon'] ) }}" alt="{{ $language['icon'] }}" />
                                     </span>
