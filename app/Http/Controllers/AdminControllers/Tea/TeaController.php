@@ -129,7 +129,7 @@ class TeaController extends Controller
      */
     public function show($lang, Tea $tea)
     {
-        //
+        return view('admin-panel.tea.tea-show', compact('tea'));
     }
 
     /**
@@ -197,6 +197,8 @@ class TeaController extends Controller
             if($request->discount){
                 $tea->sale_price = ($request->price - ($request->price*$request->discount/100));
                 $tea->discount = $request->discount;
+            } else {
+                $tea->discount = 0;
             }
 
             $tea->update();
@@ -214,6 +216,8 @@ class TeaController extends Controller
             if($request->discount){
                 $tea->sale_price = ($request->price - ($request->price*$request->discount/100));
                 $tea->discount = $request->discount;
+            } else {
+                $tea->discount = 0;
             }
 
             $tea->update();

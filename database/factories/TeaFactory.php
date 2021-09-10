@@ -22,7 +22,7 @@ class TeaFactory extends Factory
      */
     public function definition()
     {
-        $sale_name = ['10', '15', '20', '25', '50', ''];
+        $sale_name = ['0', '10', '20', '25', '50', '0'];
         $name_tm = ['Çaý', 'Gara Çaý', 'Gök Çaý', 'Sary Çaý', 'Goňur Çaý', 'Gyzyl çaý'];
         $name_en = ['Tea', 'Black Tea', 'Green Tea', 'Yellow Tea', 'Brown Tea', 'Red Tea'];
         $name_ru = ['Çaý', 'Черный Чай', 'Зеленый Чай', 'Желтый Чай', 'Коричневый Чай', 'Красный Чай'];
@@ -40,7 +40,7 @@ class TeaFactory extends Factory
             'name_tm' => $name_tm[$random],
             'name_en' => $name_en[$random],
             'name_ru' => $name_ru[$random],
-            'images' => array(['thumb' => 'assets/tea/tea-650x770.jpg', 'original' => 'assets/tea/tea.jpg']),
+            'images' => array(['thumb' => 'assets/tea/baychay/baychay-tea.png', 'original' => 'assets/tea/baychay/baychay-tea.png']),
             'price' => $price,
             'sale_price' => $percent,
             'sale_type' => mt_rand(0, 1) == 0 ? 'New' : '',
