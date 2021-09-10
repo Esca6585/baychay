@@ -53,10 +53,10 @@
                         </div>
                         <div class="modal-body">{{ __('Are you sure you want to delete this resource?') }}</div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-light-primary font-weight-bold"
+                            <button type="button" class="btn btn-secondary font-weight-bold"
                                 data-dismiss="modal">{{ __('Close') }}</button>
 
-                            <button type="submit" class="btn btn-primary font-weight-bold">{{ __('Delete') }}</button>
+                            <button type="submit" class="btn btn-light-danger font-weight-bold">{{ __('Delete') }}</button>
                         </div>
                     </div>
                 </div>

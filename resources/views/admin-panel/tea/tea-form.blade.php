@@ -149,7 +149,7 @@
                             <div class="card card-custom">
                                 <div class="card-header">
                                     <h3 class="card-title">
-                                        {{ __('Tea') }}
+                                        {{ __( ucfirst( request()->segment(count(request()->segments())) ) ) }}
                                     </h3>
 
                                 </div>
