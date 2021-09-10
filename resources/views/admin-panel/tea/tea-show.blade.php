@@ -167,7 +167,7 @@
                                             <h2 class="font-weight-bolder text-dark mb-7" style="font-size: 32px;">
                                                 {{ $tea->{ 'name_' . app()->getlocale() } }}</h2>
                                             <div class="font-size-h2 mb-7 text-dark-50">
-                                                <del>{{ $tea->sale_price ? $tea->price . ' manat' : '' }}</del>
+                                                <del>{{ $tea->sale_price ? $tea->price . ' ' . __('manat') : '' }}</del>
                                                 <span
                                                     class="text-success font-weight-boldest ml-2">{{ $tea->sale_price ? $tea->sale_price : $tea->price }}
                                                     {{ __('manat') }}</span></div>
@@ -179,7 +179,7 @@
                                             @if($tea->sale_type)
                                             <div
                                                 class="font-size-h4 mb-7 label label-xl font-weight-bold label-success label-inline">
-                                                {{ $tea->sale_type ?? '' }}</div>
+                                                {{ $tea->sale_type ? __($tea->sale_type) : '' }}</div>
                                             @endif
                                         </div>
                                     </div>

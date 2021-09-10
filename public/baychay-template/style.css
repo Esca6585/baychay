@@ -988,9 +988,9 @@ p {
     visibility: visible;
 }
 
-.product-thum span {
-    background: #519f10 none repeat scroll 0 0;
-    border: 2px solid #519f10;
+.product-thum .discount {
+    background: #9f1010 none repeat scroll 0 0;
+    border: 2px solid #9f1010;
     border-radius: 0 0 71px;
     color: #ffffff;
     display: inline-table;
@@ -1006,6 +1006,29 @@ p {
     padding: 0 27px 0 8px;
     position: absolute;
     right: auto;
+    text-align: center;
+    text-transform: uppercase;
+    top: 0;
+    width: 68px;
+}
+
+.product-thum .sale_type {
+    background: #519f10 none repeat scroll 0 0;
+    border: 2px solid #519f10;
+    border-radius: 71px 0;
+    color: #ffffff;
+    display: inline-table;
+    font-family: "Leckerli One", cursive;
+    font-size: 11px;
+    font-weight: 400;
+    height: 30px;
+    letter-spacing: 0;
+    line-height: 32px;
+    margin: 0;
+    min-width: inherit;
+    padding: 0 27px 0 20px;
+    position: absolute;
+    right: 0;
     text-align: center;
     text-transform: uppercase;
     top: 0;

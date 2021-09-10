@@ -19,16 +19,16 @@
                         </div>
                         <div class="right-blok-box">
                             <div class="serch-container hidden-xs">
-                                <a href="#"><i class="icon-magnifier"></i></a>
+                                <a href="#"><i class="flaticon2-magnifier-tool"></i></a>
                                 <div class="blog-search">
                                     <form action="#" id="search">
                                         <input type="text" placeholder="Search Here" name="s">
-                                        <button type="submit"><i class="icofont icofont-search-alt-1"></i></button>
+                                        <button type="submit"><i class="flaticon2-magnifier-tool"></i></button>
                                     </form>
                                 </div>
                             </div>
                             <div class="mine-cart-box">
-                                <a href="#"><i class="icon-handbag"></i><span id="cart-total">2</span></a>
+                                <a href="#"><i class="flaticon2-shopping-cart-1"></i><span id="cart-total">2</span></a>
                                 <ul class="mini-cart">
                                     <li class="cart-item">
                                         <div class="cart-image">
@@ -40,7 +40,7 @@
                                             </a>
                                             <span class="quantity">1 ×</span>
                                             <div class="price-box"><span class="new-price">£ 130.00</span></div>
-                                            <a href="#" class="remove_from_cart"><i class="icon-trash icons"></i></a>
+                                            <a href="#" class="remove_from_cart"><i class="flaticon2-trash"></i></a>
                                         </div>
                                     </li>
                                     <li class="cart-item">
@@ -53,7 +53,7 @@
                                             </a>
                                             <span class="quantity">1 ×</span>
                                             <div class="price-box"><span class="new-price">£ 100.99</span></div>
-                                            <a href="#" class="remove_from_cart"><i class="icon-trash icons"></i></a>
+                                            <a href="#" class="remove_from_cart"><i class="flaticon2-trash"></i></a>
                                         </div>
                                     </li>
                                     <li class="subtotal-titles">
@@ -62,14 +62,14 @@
                                     </li>
                                     <li class="mini-cart-btns">
                                         <div class="cart-btns">
-                                            <a href="cart.html">View cart</a>
-                                            <a href="checkout.html">Checkout</a>
+                                            <a href="#cart.html">View cart</a>
+                                            <a href="#checkout.html">Checkout</a>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
                             <div class="top-login-menu">
-                                <div class="top-login-inner"><a href="{{ route('login', app()->getlocale()) }}"><i class="icon-user"></i> <span class="user-login">{{ __('Login') }}</span> </a></div>
+                                <div class="top-login-inner"><a href="{{ route('login', app()->getlocale()) }}"><i class="flaticon2-user-outline-symbol"></i> <span class="user-login">{{ __('Login') }}</span> </a></div>
                             </div>
                         </div>
                     </div>

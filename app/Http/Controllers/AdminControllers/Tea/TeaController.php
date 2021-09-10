@@ -194,10 +194,11 @@ class TeaController extends Controller
             $tea->price = $request->price;
             $tea->sale_type = $request->sale_type;
             
-            if($request->discount){
+            if($request->discount != 0){
                 $tea->sale_price = ($request->price - ($request->price*$request->discount/100));
                 $tea->discount = $request->discount;
-            } else {
+            } else if($request->discount == 0) {
+                $tea->sale_price = null;
                 $tea->discount = 0;
             }
 
@@ -213,10 +214,11 @@ class TeaController extends Controller
             $tea->price = $request->price;
             $tea->sale_type = $request->sale_type;
             
-            if($request->discount){
+            if($request->discount != 0){
                 $tea->sale_price = ($request->price - ($request->price*$request->discount/100));
                 $tea->discount = $request->discount;
-            } else {
+            } else if($request->discount == 0) {
+                $tea->sale_price = null;
                 $tea->discount = 0;
             }
 

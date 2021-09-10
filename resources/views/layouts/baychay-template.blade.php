@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>BaýÇaý</title>
+    <title>BaýÇaý @yield('title')</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico in the root directory -->
@@ -23,6 +23,13 @@
     <link rel="stylesheet" href="{{ asset('baychay-template/style.css') }}">
     <link rel="stylesheet" href="{{ asset('baychay-template/css/responsive.css') }}">
     <script src="{{ asset('baychay-template/js/vendor/modernizr-2.8.3.min.js') }}"></script>
+
+    
+    <!-- Admin metronica template CSS Hear -->
+    <link href="{{ asset('metronic-template/v7/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <!-- Admin metronica template CSS Hear -->
+
+
 </head>
 
 <body>

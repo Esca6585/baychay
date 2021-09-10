@@ -10,7 +10,7 @@
                             <h1>Want to Drink <span> Organic </span> <br>take matcha.</h1>
                             <p>Lorem ipsum dolor sit amet, consectetu adipisicing elit sedeiu tempor inci ut labore et dolore magna aliqua. </p>
                             <div class="slier-btn">
-                                <a title="shop now" href="#" class="shop-btn">shop now<i class="icon-handbag"></i></a>
+                                <a title="{{ __('shop now') }}" href="#" class="shop-btn">{{ __('shop now') }}<i class="flaticon-cart"></i></a>
                             </div>
                         </div>
                     </div>
@@ -27,7 +27,7 @@
                             <h1>Want to Drink <span> Organic </span> <br>take matcha.</h1>
                             <p>Lorem ipsum dolor sit amet, consectetu adipisicing elit sedeiu tempor inci ut labore et dolore magna aliqua. </p>
                             <div class="slier-btn">
-                                <a title="shop now" href="#" class="shop-btn">shop now<i class="icon-handbag"></i></a>
+                                <a title="{{ __('shop now') }}" href="#" class="shop-btn">{{ __('shop now') }}<i class="flaticon-cart"></i></a>
                             </div>
                         </div>
                     </div>
