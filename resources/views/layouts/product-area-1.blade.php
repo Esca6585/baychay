@@ -35,9 +35,7 @@
                         @endif
                         
                         <div class="product-action">
-                            <a href="#" class="add-to-cart-btn"><i class="icon-basket icons"></i></a>
-                            <a href="#" class="compare-btn"> <i class="icon-tag icons"></i></a>
-                            <a href="#" class="add-to-wishlist-btn"><i class="icon-heart icons"></i></a>
+                            <a href="#add-to-cart" class="add-to-cart-btn"><i class="flaticon2-shopping-cart-1"></i></a>
                         </div>
                     </div>
                     <div class="product-info text-center">

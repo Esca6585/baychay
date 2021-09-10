@@ -12,8 +12,9 @@ class UserController extends Controller
     public function index()
     {
         $teaLasts = Tea::take(4)->get();
+        $teas = Tea::orderByDesc('id')->paginate(8);
 
-        return view('front-end.main', compact('teaLasts'));
+        return view('front-end.main', compact('teaLasts', 'teas'));
     }
     
     public function contactUs()

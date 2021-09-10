@@ -246,7 +246,11 @@ class TeaController extends Controller
     {
         foreach($tea->images as $deleteFolder){
             $folder = explode('/', $deleteFolder->thumb);
-            \File::deleteDirectory($folder[0] . '/' . $folder[1] . '/' . $folder[2]);
+            
+            if($folder[2] != 'baychay'){
+                \File::deleteDirectory($folder[0] . '/' . $folder[1] . '/' . $folder[2]);
+            }
+
             break;
         }
     }
