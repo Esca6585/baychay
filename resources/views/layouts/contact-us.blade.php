@@ -4,18 +4,31 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="contact-info-area">
-                    <h2>Corporate Address</h2>
-                    <div class="singel-corporat-wrap">
-                        <h3>United States</h3>
-                        <p>Demo name, 123 Main St demo, IL 60626<br>Email: info@example.com<br>Phone: 333-555-777</p>
+                    <h2>{{ __('Address') }}</h2>
+                    <div class="singel-corporat-wrap col-6 mb-4">
+                        <h3>Türkmenistan</h3>
                     </div>
-                    <div class="singel-corporat-wrap">
-                        <h3>Viet Nam</h3>
-                        <p>Demo name, 123 Main St demo, IL 60626<br>Email: info@example.com<br>Phone: 333-555-777</p>
+                    <div class="singel-corporat-wrap col-6">
+                        <p>
+                            <i class="flaticon2-pin"></i>
+                            Türkmenistan, Aşgabat şäheri, Büzmeýin etraby, Gurtly ýaşaýyş toplumy, jaý 41
+                        </p>
                     </div>
-                    <div class="singel-corporat-wrap">
-                        <h3>Bangladesh</h3>
-                        <p>Demo name, 123 Main St demo, IL 60626<br>Email: info@example.com<br>Phone: 333-555-777</p>
+                    <div class="singel-corporat-wrap col-6">
+                        <p>
+                            <i class="flaticon2-black-back-closed-envelope-shape"></i> bayteastup@gmail.com
+
+                        </p>
+                    </div>
+                    <div class="singel-corporat-wrap col-6">
+                        <p>
+                            <i class="flaticon2-phone"></i> +993 65 693199
+                        </p>
+                    </div>
+                    <div class="singel-corporat-wrap col-6">
+                        <p>
+                            <i class="flaticon2-phone"></i> +993 61 321020
+                        </p>
                     </div>
                 </div>
             </div>

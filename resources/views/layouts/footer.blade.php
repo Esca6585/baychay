@@ -3,76 +3,43 @@
     <div class="footer-top">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6">
+                <div class="col-md-4">
                     <!-- single-footer-info start -->
-                    <div class="single-footer-info">
-                        <h3 class="footer-info-title">Contact Us</h3>
+                    <div class="single-footer-info singel-corporat-wrap">
+                        <h3 class="footer-info-title">{{ __('Contact Us') }}</h3>
                         <ul class="footer-address">
                             <li>
-                                <i class="icon-location-pin "></i>
-                                <p class="desc_call">ur address goes here, streetuour Crossroad your stat road number house number floor no 123.</p>
-                            </li>
-                            <li> <i class="icon-envelope-open"></i> <a class="mail" href="#"> test@example.com</a></li>
-                            <li> <i class="icon-phone "></i>
-                                <p class="desc_call">+99 111 222 333</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- single-footer-info end -->
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <!-- single-footer-info start -->
-                    <div class="single-footer-info">
-                        <h3 class="footer-info-title">information</h3>
-                        <ul class="footer-list">
-                            <li><a href="about-us.html">Delivery Information</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="contact-us.html">Contact Us</a></li>
-
-                        </ul>
-                    </div>
-                    <!-- single-footer-info end -->
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <!-- single-footer-info start -->
-                    <div class="single-footer-info">
-                        <h3 class="footer-info-title">My Account</h3>
-                        <ul class="footer-list">
-                            <li><a href="my-account.html"> My account</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
-                            <li><a href="cart.html"> Cart</a></li>
-                            <li><a href="wishlist.html">Wishlist</a></li>
-                        </ul>
-                    </div>
-                    <!-- single-footer-info end -->
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <!-- single-footer-info start-->
-                    <div class="single-footer-info">
-                        <h3 class="footer-info-title">Recent News</h3>
-                        <ul class="sidebar-post">
-                            <li>
-                                <div class="post-img">
-                                    <a href="#"><img src="img/blog/s-1.jpg" alt=""></a>
-                                </div>
-                                <div class="post-text">
-                                    <h4><a href="#">Green tea is dolor sitantion readable eiusmod </a></h4>
-                                    <span>May 26, 2018</span>
-                                </div>
+                                <i class="flaticon2-pin"></i>
+                                <p class="desc_call mb-0">Türkmenistan, Aşgabat şäheri, Büzmeýin etraby, Gurtly
+                                    ýaşaýyş toplumy, jaý 41</p>
                             </li>
                             <li>
-                                <div class="post-img">
-                                    <a href="#"><img src="img/blog/s-2.jpg" alt=""></a>
-                                </div>
-                                <div class="post-text">
-                                    <h4><a href="#">Itreader tea long established contentfact that.</a></h4>
-                                    <span>May 28, 2018</span>
-                                </div>
+                                <i class="flaticon2-black-back-closed-envelope-shape"></i> 
+                                <a class="mail" href="#mail">bayteastup@gmail.com</a>
+                            </li>
+                            <li>
+                                <i class="flaticon2-phone"></i>
+                                <!-- <p class="desc_call"></p> -->
+                                <p class="desc_call mb-0">+993 65 693199</p>
+                            </li>
+                            <li>
+                                <i class="flaticon2-phone"></i>
+                                <p class="desc_call mb-0">+993 61 321020</p>
                             </li>
                         </ul>
                     </div>
-                    <!-- single-footer-info end-->
+                    <!-- single-footer-info end -->
+                </div>
+                <div class="col-md-4">
+                    <!-- single-footer-info start -->
+                    <div class="single-footer-info singel-corporat-wrap">
+                        <h3 class="footer-info-title">{{ __('Information') }}</h3>
+                        <ul>
+                            <li><a href="{{ url('/') }}">{{ __('Main Page') }}</a></li>
+                            <li><a href="{{ route('contact-us', app()->getlocale() ) }}">{{ __('Contact Us') }}</a></li>
+                        </ul>
+                    </div>
+                    <!-- single-footer-info end -->
                 </div>
             </div>
         </div>
