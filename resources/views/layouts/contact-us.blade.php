@@ -34,23 +34,23 @@
             </div>
             <div class="col-lg-6">
                 <div class="contact-info-area r-pt-40">
-                    <h2>Get in Touch</h2>
+                    <h2>{{ __('Get in Touch') }}</h2>
                     <div class="contact-form-area">
-                        <form id="contact-form" action="email.php" method="POST">
+                        <form id="contact-form" action="#email">
                             <div class="contact-page-form">
                                 <div class="contact-input">
                                     <div class="contact-inner">
-                                        <input name="name" type="text" placeholder="First Name *" id="first-name">
+                                        <input name="name" type="text" placeholder="{{ __('First Name') }}" id="first-name">
                                     </div>
                                     <div class="contact-inner">
-                                        <input type="text" placeholder="Email *" id="email" name="email">
+                                        <input type="text" placeholder="{{ __('Email') }}" id="email" name="email">
                                     </div>
                                     <div class="contact-inner contact-message">
-                                        <textarea name="message" placeholder="Message *"></textarea>
+                                        <textarea name="message" placeholder="{{ __('Message') }}"></textarea>
                                     </div>
                                 </div>
                                 <div class="contact-submit-btn">
-                                    <button class="submit-btn" type="submit">Send Email</button>
+                                    <button class="submit-btn" type="submit">{{ __('Send Email') }}</button>
                                     <p class="form-messege"></p>
                                 </div>
                             </div>

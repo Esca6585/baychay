@@ -4,7 +4,8 @@
             <div class="row">
                 <div class="col-lg-3 col-md-4">
                     <div class="logo">
-                        <a href="index.html"><img src="{{ asset('baychay-template/img/logo/logo.png') }}" alt="baychay-template/img/logo/logo.png"></a>
+                        <a href="index.html"><img src="{{ asset('baychay-template/img/logo/logo.png') }}"
+                                alt="baychay-template/img/logo/logo.png"></a>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-8">
@@ -12,12 +13,26 @@
                         <div class="main-menu-area  d-none d-lg-block">
                             <nav>
                                 <ul>
-                                    <li><a href="{{ url('/') }}">{{ __('Main Page') }}</a></li>
-                                    <li><a href="{{ route('contact-us', app()->getlocale() ) }}">{{ __('Contact Us') }}</a></li>
+                                    <li><a href="{{ route('main-page', app()->getlocale() ) }}">{{ __('Main Page') }}</a></li>
+                                    <li><a
+                                            href="{{ route('contact-us', app()->getlocale() ) }}">{{ __('Contact Us') }}</a>
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
                         <div class="right-blok-box">
+
+                            @foreach (Config::get('languages') as $lang => $language)
+                            <div class="mr-2">
+                                <a href="{{ route(Route::currentRouteName(), [$lang ] ) }}">
+                                    <span class="symbol symbol-20 mr-3">
+                                        <img src="{{ asset('metronic-template/v7/assets/media/svg/flags/' . $language['icon'] ) }}"
+                                            alt="{{ $language['icon'] }}" />
+                                    </span>
+                                </a>
+                            </div>
+                            @endforeach
+
                             <div class="serch-container hidden-xs">
                                 <a href="#"><i class="flaticon2-magnifier-tool"></i></a>
                                 <div class="blog-search">
@@ -27,12 +42,14 @@
                                     </form>
                                 </div>
                             </div>
+
                             <div class="mine-cart-box">
                                 <a href="#"><i class="flaticon2-shopping-cart-1"></i><span id="cart-total">2</span></a>
                                 <ul class="mini-cart">
                                     <li class="cart-item">
                                         <div class="cart-image">
-                                            <a href="single-product.html"><img src="{{ asset('baychay-template/img/product/1.jpg') }}" alt=""></a>
+                                            <a href="single-product.html"><img
+                                                    src="{{ asset('baychay-template/img/product/1.jpg') }}" alt=""></a>
                                         </div>
                                         <div class="cart-title">
                                             <a href="single-product.html">
@@ -45,7 +62,8 @@
                                     </li>
                                     <li class="cart-item">
                                         <div class="cart-image">
-                                            <a href="single-product.html"><img src="{{ asset('baychay-template/img/product/6.jpg') }}" alt=""></a>
+                                            <a href="single-product.html"><img
+                                                    src="{{ asset('baychay-template/img/product/6.jpg') }}" alt=""></a>
                                         </div>
                                         <div class="cart-title">
                                             <a href="single-product.html">
@@ -58,7 +76,8 @@
                                     </li>
                                     <li class="subtotal-titles">
                                         <div class="subtotal-titles">
-                                            <h3>Sub-Total :</h3><span>£ 230.99</span></div>
+                                            <h3>Sub-Total :</h3><span>£ 230.99</span>
+                                        </div>
                                     </li>
                                     <li class="mini-cart-btns">
                                         <div class="cart-btns">
@@ -69,7 +88,12 @@
                                 </ul>
                             </div>
                             <div class="top-login-menu">
-                                <div class="top-login-inner"><a href="{{ route('login', app()->getlocale()) }}"><i class="flaticon2-user-outline-symbol"></i> <span class="user-login">{{ __('Login') }}</span> </a></div>
+                                <div class="top-login-inner">
+                                    <a href="{{ route('login', app()->getlocale()) }}">
+                                        <i class="flaticon2-user"></i> 
+                                        <span class="user-login">{{ __('Login') }}</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -83,7 +107,9 @@
                             <nav id="mobile-menu-active">
                                 <ul>
                                     <li><a href="{{ url('/') }}">{{ __('Main Page') }}</a></li>
-                                    <li><a href="{{ route('contact-us', app()->getlocale() ) }}">{{ __('Contact Us') }}</a></li>
+                                    <li><a
+                                            href="{{ route('contact-us', app()->getlocale() ) }}">{{ __('Contact Us') }}</a>
+                                    </li>
                                 </ul>
                             </nav>
                         </div>

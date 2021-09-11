@@ -33,9 +33,9 @@
                 <div class="col-md-4">
                     <!-- single-footer-info start -->
                     <div class="single-footer-info singel-corporat-wrap">
-                        <h3 class="footer-info-title">{{ __('Information') }}</h3>
+                        <h3 class="footer-info-title">{{ __('Pages') }}</h3>
                         <ul>
-                            <li><a href="{{ url('/') }}">{{ __('Main Page') }}</a></li>
+                            <li><a href="{{ route('main-page', app()->getlocale() ) }}">{{ __('Main Page') }}</a></li>
                             <li><a href="{{ route('contact-us', app()->getlocale() ) }}">{{ __('Contact Us') }}</a></li>
                         </ul>
                     </div>
@@ -50,7 +50,7 @@
                 <div class="col">
                     <!-- copy-right start -->
                     <div class="copy-right">
-                        <p>Copyright © 2018 <a href="#">Rongcha</a>. All Rights Reserved. </p>
+                        <p>{{ __('Copyright') }} © {{ date('Y') }} <a href="{{ route('main-page', app()->getlocale() ) }}">BaýÇaý</a>. {{ __('All Rights Reserved') }}. </p>
                     </div>
                     <!-- copy-right end -->
                 </div>

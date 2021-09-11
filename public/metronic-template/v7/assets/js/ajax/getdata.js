@@ -1,4 +1,4 @@
-$(document).on('click', '.page-link', function (event) {
+$(document).on('click', '.admin-page-link', function (event) {
     event.preventDefault();
     var page = $(this).attr('href').split('page=')[1];
     var pagination = $("#datatable_length").val();
@@ -77,3 +77,23 @@ $(document).on('click', '#search_button', function () {
 });
 
 $("#alert-message").delay(2000).fadeOut(1000); // change 5000 to number of seconds in milliseconds
+
+$(document).on('click', '.main-page-link', function (event) {
+    event.preventDefault();
+    var page = $(this).attr('href').split('page=')[1];
+    console.log('main-page-link');
+    getMainMoreData(page);
+});
+
+function getMainMoreData(page) {
+    var data = 'page=' + page;
+
+    $.ajax({
+        type: "GET",
+        url: window.location.href,
+        data: data,
+        success: function (data) {
+            $('#products').html(data);
+        }
+    });
+}

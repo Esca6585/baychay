@@ -29,6 +29,9 @@
     <link href="{{ asset('metronic-template/v7/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
     <!-- Admin metronica template CSS Hear -->
 
+    <!-- begin pagination -->
+    <link rel="stylesheet" href="{{ asset('baychay-template/css/pagination.css') }}">
+    <!-- end pagination  -->
 
 </head>
 
@@ -94,6 +97,8 @@
     <script src="{{ asset('baychay-template/js/plugins.js') }}"></script>
     <!-- main JS -->
     <script src="{{ asset('baychay-template/js/main.js') }}"></script>
+
+    <script src="{{ asset('metronic-template/v7/assets/js/ajax/getdata.js') }}"></script>
 </body>
 
 </html>

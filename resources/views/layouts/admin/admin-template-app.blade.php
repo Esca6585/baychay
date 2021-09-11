@@ -40,6 +40,10 @@
     <!--end::Layout Themes-->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('baychay-template/img/favicon.ico') }}">
 
+    <!-- begin pagination -->
+    <link rel="stylesheet" href="{{ asset('baychay-template/css/pagination-admin.css') }}">
+    <!-- end pagination  -->
+
     <style>
         .odd {
             background: var(--light);

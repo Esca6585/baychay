@@ -20,9 +20,9 @@ Route::group([
     'where' => ['locale' => '[a-z]{2}'],
 ], function () {
     
-    Route::get('/', [App\Http\Controllers\UserControllers\UserController::class, 'index']);
+    Route::get('/', [App\Http\Controllers\FrontControllers\FrontController::class, 'index'])->name('main-page');
 
-    Route::get('/contact-us', [App\Http\Controllers\UserControllers\UserController::class, 'contactUs'])->name('contact-us');
+    Route::get('/contact-us', [App\Http\Controllers\FrontControllers\FrontController::class, 'contactUs'])->name('contact-us');
 
     Auth::routes([
         'register' => false, // Registration Routes...
