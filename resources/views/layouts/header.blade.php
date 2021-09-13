@@ -13,26 +13,27 @@
                         <div class="main-menu-area  d-none d-lg-block">
                             <nav>
                                 <ul>
-                                    <li><a href="{{ route('main-page', app()->getlocale() ) }}">{{ __('Main Page') }}</a></li>
                                     <li><a
+                                            href="{{ route('main-page', app()->getlocale() ) }}">{{ __('Main Page') }}</a>
+                                    </li>
+                                    <li>
+                                        <a
                                             href="{{ route('contact-us', app()->getlocale() ) }}">{{ __('Contact Us') }}</a>
                                     </li>
                                 </ul>
                             </nav>
+
+
                         </div>
+
                         <div class="right-blok-box">
-
-                            @foreach (Config::get('languages') as $lang => $language)
-                            <div class="mr-2">
-                                <a href="{{ route(Route::currentRouteName(), [$lang ] ) }}">
-                                    <span class="symbol symbol-20 mr-3">
-                                        <img src="{{ asset('metronic-template/v7/assets/media/svg/flags/' . $language['icon'] ) }}"
-                                            alt="{{ $language['icon'] }}" />
-                                    </span>
-                                </a>
+                            <div class="mr-3 mt-1">
+                                <select name="" id="changeLanguage">
+                                    @foreach (Config::get('languages') as $lang => $language)
+                                        <option value="{{ $lang }}" {{ app()->getlocale() == $lang ? 'selected' : '' }} >{{ $language['name'] }}</option>
+                                    @endforeach
+                                </select>
                             </div>
-                            @endforeach
-
                             <div class="serch-container hidden-xs">
                                 <a href="#"><i class="flaticon2-magnifier-tool"></i></a>
                                 <div class="blog-search">
@@ -90,11 +91,12 @@
                             <div class="top-login-menu">
                                 <div class="top-login-inner">
                                     <a href="{{ route('login', app()->getlocale()) }}">
-                                        <i class="flaticon2-user"></i> 
+                                        <i class="flaticon2-user"></i>
                                         <span class="user-login">{{ __('Login') }}</span>
                                     </a>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,18 @@
 $("#changeLanguage").on('change',function(e){
     var language = $(this).val();
 
+    if(window.location.pathname == '/ru' || window.location.pathname == '/en' || window.location.pathname == '/tm'){
+        if(language == 'ru') {
+            window.location.pathname = '/ru';
+        }
+        else if(language == 'en') {
+            window.location.pathname = '/en';
+        }
+        else {
+            window.location.pathname = '/tm';
+        }
+    }
+
     if(window.location.pathname == '/ru/login' || window.location.pathname == '/en/login' || window.location.pathname == '/tm/login'){
         if(language == 'ru') {
             window.location.pathname = '/ru/login';

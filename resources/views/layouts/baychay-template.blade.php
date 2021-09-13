@@ -98,7 +98,10 @@
     <!-- main JS -->
     <script src="{{ asset('baychay-template/js/main.js') }}"></script>
 
+
     <script src="{{ asset('metronic-template/v7/assets/js/ajax/getdata.js') }}"></script>
+
+    <script src="{{ asset('metronic-template/v7/assets/js/ajax/changeLanguage.js') }}"></script>
 </body>
 
 </html>
