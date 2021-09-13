@@ -78,11 +78,14 @@
             @yield('our-blog-area-2')
         <!-- our-brand-area-2 end -->
 
+        <!-- blog start-->
+            @yield('blog')
+        <!-- blog end-->
+
         <!-- footer-area start -->
             @include('layouts.footer')
         <!-- footer-area end -->
-
-
+        
     </div>
 
 

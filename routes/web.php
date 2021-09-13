@@ -24,6 +24,8 @@ Route::group([
 
     Route::get('/contact-us', [App\Http\Controllers\FrontControllers\FrontController::class, 'contactUs'])->name('contact-us');
 
+    Route::get('/blog', [App\Http\Controllers\FrontControllers\FrontController::class, 'blog'])->name('blog');
+
     Auth::routes([
         'register' => false, // Registration Routes...
         'reset' => false, // Password Reset Routes...

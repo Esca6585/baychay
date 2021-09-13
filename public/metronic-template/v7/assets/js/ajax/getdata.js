@@ -78,7 +78,7 @@ $(document).on('click', '#search_button', function () {
 
 $("#alert-message").delay(2000).fadeOut(1000); // change 5000 to number of seconds in milliseconds
 
-$(document).on('click', '.main-page-link', function (event) {
+$(document).on('click', '.page-numbers', function (event) {
     event.preventDefault();
     var page = $(this).attr('href').split('page=')[1];
     console.log('main-page-link');
