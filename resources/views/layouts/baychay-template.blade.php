@@ -24,9 +24,10 @@
     <link rel="stylesheet" href="{{ asset('baychay-template/css/responsive.css') }}">
     <script src="{{ asset('baychay-template/js/vendor/modernizr-2.8.3.min.js') }}"></script>
 
-    
+
     <!-- Admin metronica template CSS Hear -->
-    <link href="{{ asset('metronic-template/v7/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('metronic-template/v7/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet"
+        type="text/css" />
     <!-- Admin metronica template CSS Hear -->
 
     <!-- begin pagination -->
@@ -37,57 +38,56 @@
 
 <body>
     <div class="wrapper">
-        
+
         <!-- header start-->
-            @include('layouts.header')
+        @include('layouts.header')
         <!-- header end-->
 
         <!-- login start-->
-            @yield('admin-login')
+        @yield('admin-login')
         <!-- login end-->
 
         <!-- contact-us start-->
-            @yield('contact-us')
+        @yield('contact-us')
         <!-- contact-us end-->
 
         <!-- slider-main-area start-->
-            @yield('slider')
+        @yield('slider')
         <!-- slider-main-area end-->
 
         <!-- product-area start -->
-            @yield('product-area-1')
+        @yield('product-area-1')
         <!-- product-area end -->
 
         <!-- provide-section start  -->
-            @yield('provide-section')
+        @yield('provide-section')
         <!-- provide-section end -->
 
         <!-- product-area start -->
-            @yield('product-area-2')
+        @yield('product-area-2')
         <!-- product-area end -->
 
         <!-- weekly-flash-wrapper start -->
-            @yield('weekly-flash-wrapper')
+        @yield('weekly-flash-wrapper')
         <!-- weekly-flash-wrapper end -->
 
         <!-- our-blog-area-1 start -->
-            @yield('our-blog-area-1')
+        @yield('our-blog-area-1')
         <!-- our-blog-area-1 end -->
 
         <!-- our-brand-area-2 start -->
-            @yield('our-blog-area-2')
+        @yield('our-blog-area-2')
         <!-- our-brand-area-2 end -->
 
         <!-- blog start-->
-            @yield('blog')
+        @yield('blog')
         <!-- blog end-->
 
         <!-- footer-area start -->
-            @include('layouts.footer')
+        @include('layouts.footer')
         <!-- footer-area end -->
-        
-    </div>
 
+    </div>
 
     <!-- jquery -->
     <script src="{{ asset('baychay-template/js/vendor/jquery-1.12.4.min.js') }}"></script>
@@ -105,6 +105,7 @@
     <script src="{{ asset('metronic-template/v7/assets/js/ajax/getdata.js') }}"></script>
 
     <script src="{{ asset('metronic-template/v7/assets/js/ajax/changeLanguage.js') }}"></script>
+
 </body>
 
 </html>

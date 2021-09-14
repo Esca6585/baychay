@@ -17,16 +17,17 @@
                         <div class="col-lg-3">
                             <div class="single-product-wrap">
                                 <div class="product-thum">
-                                    <a href="single-product.html">
+                                    <a href="#product-detail" id="product-link">
                                         @foreach($tea->images as $image)
-                                        <img class="primary-image" src="{{ asset($image->original) }}"
-                                            alt="{{ asset($image->original) }}">
+                                        <img class="primary-image" src="{{ asset($image->thumb) }}"
+                                            alt="{{ asset($image->thumb) }}"
+                                        >
                                         @break
                                         @endforeach
 
                                         @foreach(array_reverse($tea->images) as $image)
-                                        <img class="secondary-image" src="{{ asset($image->original) }}"
-                                            alt="{{ asset($image->original) }}">
+                                        <img class="secondary-image" src="{{ asset($image->thumb) }}"
+                                            alt="{{ asset($image->thumb) }}">
                                         @break
                                         @endforeach
                                     </a>
@@ -58,7 +59,7 @@
                         </div>
                         @endforeach
                         <!-- single-product-wrap end -->
-                    </div>                    
+                    </div>
                 </div>
             </div>
             <div class="d-flex justify-content-center mt-5">

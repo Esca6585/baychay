@@ -277,7 +277,7 @@
                                                             data-images-count="{{ count($tea->images) }}"
                                                             style="background-image: url({{ asset('metronic-template/v7/assets/media/svg/icons/Navigation/Close.svg') }})">
                                                             <div class="image-input-wrapper"
-                                                                style="background-image: url({{ asset($image->original) }})">
+                                                                style="background-image: url({{ asset($image->thumb) }})">
                                                             </div>
 
                                                             <label

@@ -16,14 +16,14 @@
                     <div class="product-thum">
                         <a href="#single-product">
                             @foreach($teaLast->images as $image)
-                            <img class="primary-image" src="{{ asset($image->original) }}"
-                                alt="{{ asset($image->original) }}">
+                            <img class="primary-image" src="{{ asset($image->thumb) }}"
+                                alt="{{ asset($image->thumb) }}">
                             @break
                             @endforeach
 
                             @foreach(array_reverse($teaLast->images) as $image)
-                            <img class="secondary-image" src="{{ asset($image->original) }}"
-                                alt="{{ asset($image->original) }}">
+                            <img class="secondary-image" src="{{ asset($image->thumb) }}"
+                                alt="{{ asset($image->thumb) }}">
                             @break
                             @endforeach
                         </a>

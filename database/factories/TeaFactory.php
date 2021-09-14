@@ -41,8 +41,8 @@ class TeaFactory extends Factory
             'name_en' => $name_en[$random],
             'name_ru' => $name_ru[$random],
             'images' => array(
-                ['thumb' => 'assets/tea/baychay/baychay-tea-2.png', 'original' => 'assets/tea/baychay/baychay-tea-2.png'],
-                ['thumb' => 'assets/tea/baychay/baychay-tea.png', 'original' => 'assets/tea/baychay/baychay-tea.png',],
+                ['thumb' => 'assets/tea/baychay/baychay-tea-1-650x770.jpg', 'original' => 'assets/tea/baychay/baychay-tea-1.jpg',],
+                ['thumb' => 'assets/tea/baychay/baychay-tea-2-650x770.jpg', 'original' => 'assets/tea/baychay/baychay-tea-2.jpg'],
             ),
             'price' => $price,
             'sale_price' => $percent,
