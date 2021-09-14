@@ -24,7 +24,7 @@ Route::group([
 
     Route::get('/contact-us', [App\Http\Controllers\FrontControllers\FrontController::class, 'contactUs'])->name('contact-us');
 
-    Route::get('/blog', [App\Http\Controllers\FrontControllers\FrontController::class, 'blog'])->name('blog');
+    Route::get('/', [App\Http\Controllers\FrontControllers\FrontController::class, 'blog'])->name('single.product');
 
     Auth::routes([
         'register' => false, // Registration Routes...

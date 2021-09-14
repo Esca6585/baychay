@@ -13,8 +13,6 @@ class FrontController extends Controller
 {
     public function index()
     {   
-        dump(Carbon::now());
-
         $teaLasts = Tea::take(4)->get();
         $teas = Tea::orderByDesc('id')->paginate(8);
 

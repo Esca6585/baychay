@@ -19,7 +19,7 @@
                     </div>
                     <div class="aritcles-content text-center">
                         <div class="articles-date">
-                            By <span>BaýÇaý</span>- {{ date('M') }} {{ date('d') }}, {{ date('Y') }}
+                            <span>BaýÇaý</span> - {{ \Carbon\Carbon::parse(\Carbon\Carbon::today()->subMonth(7)->subDay(7))->format('M d, Y') }}
                         </div>
                         <a href="blog-details.html">bir käse çaý rahatlyk çeşmesi</a>
                     </div>
@@ -35,9 +35,9 @@
                     </div>
                     <div class="aritcles-content text-center">
                         <div class="articles-date">
-                            By <span>BaýÇaý</span>- {{ date('M') }} {{ date('d') }}, {{ date('Y') }}
+                            <span>BaýÇaý</span> - {{ \Carbon\Carbon::parse(\Carbon\Carbon::today()->subMonth(4)->subDay(13))->format('M d, Y') }}
                         </div>
-                        <a href="blog-details.html">Ylham bermek Çaý söýgüsi</a>
+                        <a href="blog-details.html">ylham bermek çaý söýgüsi</a>
                     </div>
                 </div>
             </div>
@@ -51,9 +51,9 @@
                     </div>
                     <div class="aritcles-content text-center">
                         <div class="articles-date">
-                            By <span>BaýÇaý</span>- {{ date('M') }} {{ date('d') }}, {{ date('Y') }}
+                            <span>BaýÇaý</span> - {{ \Carbon\Carbon::parse(\Carbon\Carbon::today()->subMonth(2)->subDay(29))->format('M d, Y') }}
                         </div>
-                        <a href="blog-details.html">ertirlik naharyndaky çaýyňyzdan lezzet alyň.</a>
+                        <a href="blog-details.html">ertirlik naharyndaky çaýyňyzdan lezzet alyň</a>
                     </div>
                 </div>
             </div>
