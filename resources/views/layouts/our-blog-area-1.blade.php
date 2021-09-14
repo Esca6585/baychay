@@ -12,48 +12,48 @@
             <div class="col-lg-4 col-md-6">
                 <div class="singel-our-blog">
                     <div class="blog-thum">
-                        <img src="{{ asset('baychay-template/img/blog/1.jpg') }}" alt="">
+                        <img src="{{ asset('baychay-template/img/blog/s-1.jpg') }}" alt="">
                         <div class="blog-button">
                             <a href="blog-details.html">Read More</a>
                         </div>
                     </div>
                     <div class="aritcles-content text-center">
                         <div class="articles-date">
-                            By <span>rongcha</span>- May 26,2018
+                            By <span>BaýÇaý</span>- {{ date('M') }} {{ date('d') }}, {{ date('Y') }}
                         </div>
-                        <a href="blog-details.html">Lorem ipsum dolorsit abowab amet conse looking at its layout.</a>
+                        <a href="blog-details.html">bir käse çaý rahatlyk çeşmesi</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="singel-our-blog">
                     <div class="blog-thum">
-                        <img src="{{ asset('baychay-template/img/blog/2.jpg') }}" alt="">
+                        <img src="{{ asset('baychay-template/img/blog/s-2.jpg') }}" alt="">
                         <div class="blog-button">
                             <a href="blog-details.html">Read More</a>
                         </div>
                     </div>
                     <div class="aritcles-content text-center">
                         <div class="articles-date">
-                            By <span>rongcha</span>- May 26,2018
+                            By <span>BaýÇaý</span>- {{ date('M') }} {{ date('d') }}, {{ date('Y') }}
                         </div>
-                        <a href="blog-details.html">Green tea is dolor sitantion readable eiusmod ametunat nulla pariatur.</a>
+                        <a href="blog-details.html">Ylham bermek Çaý söýgüsi</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="singel-our-blog">
                     <div class="blog-thum">
-                        <img src="{{ asset('baychay-template/img/blog/3.jpg') }}" alt="">
+                        <img src="{{ asset('baychay-template/img/blog/s-1.jpg') }}" alt="">
                         <div class="blog-button">
                             <a href="blog-details.html">Read More</a>
                         </div>
                     </div>
                     <div class="aritcles-content text-center">
                         <div class="articles-date">
-                            By <span>rongcha</span>- May 28,2018
+                            By <span>BaýÇaý</span>- {{ date('M') }} {{ date('d') }}, {{ date('Y') }}
                         </div>
-                        <a href="blog-details.html">Lorem ipsum dolor sit amet conse layout nostrud exercitation.</a>
+                        <a href="blog-details.html">ertirlik naharyndaky çaýyňyzdan lezzet alyň.</a>
                     </div>
                 </div>
             </div>

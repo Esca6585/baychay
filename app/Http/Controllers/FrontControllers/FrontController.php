@@ -6,11 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Tea;
+use Carbon\Carbon;
+
 
 class FrontController extends Controller
 {
     public function index()
-    {
+    {   
+        dump(Carbon::now());
+
         $teaLasts = Tea::take(4)->get();
         $teas = Tea::orderByDesc('id')->paginate(8);
 

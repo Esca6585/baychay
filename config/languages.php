@@ -2,19 +2,16 @@
     return [
         'tm' => [
             'name' => 'Türkmen',
-            'icon' => '229-turkmenistan.svg',
-            'slider' => 'baychay-template/img/slider/baychay-banner-tm.jpg'
+            'icon' => '229-turkmenistan.svg'
         ],
         
         'en' => [
             'name' => 'English',
-            'icon' => '226-united-states.svg',
-            'slider' => 'baychay-template/img/slider/baychay-banner-en.jpg'
+            'icon' => '226-united-states.svg'
         ],
 
         'ru' => [
             'name' => 'Русский',
-            'icon' => '248-russia.svg',
-            'slider' => 'baychay-template/img/slider/baychay-banner-ru.jpg'
+            'icon' => '248-russia.svg'
         ],
     ];
