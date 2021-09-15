@@ -27,7 +27,7 @@ class MessageRequest extends FormRequest
             'name' => 'required',
             'phone_number' => 'required|numeric',
             'email' => 'required|email',
-            'message' => 'required'
+            'messages' => 'required'
         ];
     }
 }

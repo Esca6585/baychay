@@ -49,7 +49,7 @@
                         class="label label-lg font-weight-bold label-success label-inline">{{ __($tea->sale_type) }}</span>
                     @endif
                 </td>
-                <td>@include('layouts.admin.action')</td>
+                <td>@include('layouts.admin.action', ['model' => $tea])</td>
             </tr>
             @endforeach
         </tbody>

@@ -1,7 +1,7 @@
 @extends('layouts.admin.admin-template-app')
 
 @section('title')
-{{ __('Tea') }}
+{{ __('Message') }}
 @endsection
 
 @section('body')
@@ -121,7 +121,7 @@
                                         class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                                         <li class="breadcrumb-item text-muted">
                                             <a href="{{ route(Route::currentRouteName(), app()->getlocale() ) }}"
-                                                class="text-muted">{{ config('app.name') }}</a>
+                                                class="text-muted">{{ __('Message') }}</a>
                                         </li>
 
                                     </ul>
@@ -141,26 +141,10 @@
                             <div class="card card-custom">
                                 <div class="card-header flex-wrap py-5">
                                     <div class="card-title">
-                                        <h3 class="card-label">{{ config('app.name') }}
+                                        <h3 class="card-label">{{ __('Message') }}
                                         </h3>
                                     </div>
                                     <div class="card-toolbar">
-                                        <!--begin::Button-->
-                                        <a href="{{ route(Request::segment(3) . '.create', app()->getlocale() ) }}"
-                                            class="btn font-weight-bolder">
-                                            <span class="svg-icon svg-icon-xl">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M6.54184 2.36899C4.34504 2.65912 2.65912 4.34504 2.36899 6.54184C2.16953 8.05208 2 9.94127 2 12C2 14.0587 2.16953 15.9479 2.36899 17.4582C2.65912 19.655 4.34504 21.3409 6.54184 21.631C8.05208 21.8305 9.94127 22 12 22C14.0587 22 15.9479 21.8305 17.4582 21.631C19.655 21.3409 21.3409 19.655 21.631 17.4582C21.8305 15.9479 22 14.0587 22 12C22 9.94127 21.8305 8.05208 21.631 6.54184C21.3409 4.34504 19.655 2.65912 17.4582 2.36899C15.9479 2.16953 14.0587 2 12 2C9.94127 2 8.05208 2.16953 6.54184 2.36899Z"
-                                                        fill="#12131A" />
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M12 17C12.5523 17 13 16.5523 13 16V13H16C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11H13V8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8V11H8C7.44772 11 7 11.4477 7 12C7 12.5523 7.44771 13 8 13H11V16C11 16.5523 11.4477 17 12 17Z"
-                                                        fill="#12131A" />
-                                                </svg>
-                                            </span>
-                                        </a>
-                                        <!--end::Button-->
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -252,28 +236,13 @@
 
 
                                     <!--begin::Alert-->
-                                    @if(session()->has('success-create'))
-                                    <div class="alert alert-fixed alert-custom alert-light-primary fade show mb-5" id="alert-message" role="alert">
-                                        <div class="alert-icon">
-                                            <i class="flaticon2-plus text-primary"></i>
-                                        </div>
-                                        <div class="alert-text">{{ __(session()->get('success-create')) }}</div>
-                                        <div class="alert-close">
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                <span aria-hidden="true">
-                                                    <i class="ki ki-close"></i>
-                                                </span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    @endif
 
-                                    @if(session()->has('success-update'))
-                                    <div class="alert alert-fixed alert-custom alert-light-warning fade show mb-5" id="alert-message" role="alert">
+                                    @if(session()->has('warning'))
+                                    <div class="alert alert-fixed alert-custom alert-light-danger fade show mb-5" id="alert-message" role="alert">
                                         <div class="alert-icon">
-                                            <i class="flaticon2-edit text-warning"></i>
+                                            <i class="flaticon-warning text-danger"></i>
                                         </div>
-                                        <div class="alert-text">{{ __(session()->get('success-update')) }}</div>
+                                        <div class="alert-text">{{ __(session()->get('warning')) }}</div>
                                         <div class="alert-close">
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                 <span aria-hidden="true">
@@ -307,54 +276,20 @@
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
-                                                    @foreach (Config::get('languages') as $lang => $language)
-                                                    <th>{{ __('Name') }} ({{ $language['name'] }})</th>
-                                                    @endforeach
-                                                    <th>{{ __('Price') }}</th>
-                                                    <th>{{ __('Sale Price') }}</th>
-                                                    <th>{{ __('Discount') }}</th>
-                                                    <th>{{ __('Sale Type') }}</th>
+                                                    <th>{{ __('Name') }}</th>
+                                                    <th>{{ __('Phone number') }}</th>
+                                                    <th>{{ __('Email') }}</th>
                                                     <th>{{ __('Actions') }}</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($teas as $tea)
+                                                @foreach ($messages as $message)
                                                 <tr id="datatable">
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $tea->name_tm }}</td>
-                                                    <td>{{ $tea->name_en }}</td>
-                                                    <td>{{ $tea->name_ru }}</td>
-                                                    <td>
-                                                        <span
-                                                            class="label label-lg font-weight-bold label-{{ $tea->sale_price ? 'light-danger' : 'light-success' }} label-inline">
-                                                            @if($tea->sale_price)
-                                                            <del>{{ $tea->price }} {{ __('manat') }}</del>
-                                                            @else
-                                                            {{ $tea->price }} {{ __('manat') }}
-                                                            @endif
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        @if($tea->sale_price)
-                                                        <span
-                                                            class="label label-lg font-weight-bold label-success label-inline">
-                                                            {{ $tea->sale_price }} {{ __('manat') }}
-                                                        </span>
-                                                        @endif
-                                                    </td>
-                                                    <td>
-                                                        @if($tea->discount)
-                                                        <span
-                                                            class="label label-lg font-weight-bold label-danger label-inline">-{{ __($tea->discount) }}%</span>
-                                                        @endif
-                                                    </td>
-                                                    <td>
-                                                        @if($tea->sale_type)
-                                                        <span
-                                                            class="label label-lg font-weight-bold label-success label-inline">{{ __($tea->sale_type) }}</span>
-                                                        @endif
-                                                    </td>
-                                                    <td>@include('layouts.admin.action', ['model' => $tea])</td>
+                                                    <td>{{ $message->name }}</td>
+                                                    <td>{{ $message->phone_number }}</td>
+                                                    <td>{{ $message->email }}</td>
+                                                    <td>@include('layouts.admin.action', ['model' => $message])</td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>
@@ -362,7 +297,7 @@
 
                                         <div class="d-flex justify-content-end">
                                             <div>
-                                                {{ $teas->links('layouts.admin.pagination') }}
+                                                {{ $messages->links('layouts.admin.pagination') }}
                                             </div>
                                         </div>
                                     </div>

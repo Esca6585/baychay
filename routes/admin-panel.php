@@ -18,6 +18,7 @@ Route::group([
 
         Route::resources([
             '/tea' => App\Http\Controllers\AdminControllers\Tea\TeaController::class,
+            '/message' => App\Http\Controllers\AdminControllers\Message\MessageController::class,
         ]);
     });
 

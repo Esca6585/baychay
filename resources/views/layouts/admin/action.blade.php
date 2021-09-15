@@ -1,5 +1,5 @@
 <span class="dtr-data d-flex">
-    <a href="{{ route(Request::segment(3) . '.show', [app()->getlocale(), $tea->id ] ) }}"
+    <a href="{{ route(Request::segment(3) . '.show', [app()->getlocale(), $model->id ] ) }}"
         class="btn btn-sm btn-clean btn-icon mr-2" title="{{ __('View') }}">
         <span class="svg-icon svg-icon-xl">
             <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +17,7 @@
             </svg>
         </span>
     </a>
-    <a href="{{ route(Request::segment(3) . '.edit', [app()->getlocale(), $tea->id ] ) }}"
+    <a href="{{ route(Request::segment(3) . '.edit', [app()->getlocale(), $model->id ] ) }}"
         class="btn btn-sm btn-clean btn-icon mr-2" title="{{ __('Edit') }}">
         <span class="svg-icon svg-icon-md">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
@@ -35,7 +35,7 @@
             </svg>
         </span>
     </a>
-    <form action="{{ route(Request::segment(3) . '.destroy', [app()->getlocale(), $tea->id ] ) }}" method="post">
+    <form action="{{ route(Request::segment(3) . '.destroy', [app()->getlocale(), $model->id ] ) }}" method="post">
         @method('delete')
         @csrf
 
