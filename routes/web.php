@@ -24,7 +24,9 @@ Route::group([
 
     Route::get('/contact-us', [App\Http\Controllers\FrontControllers\FrontController::class, 'contactUs'])->name('contact-us');
 
-    Route::get('/', [App\Http\Controllers\FrontControllers\FrontController::class, 'blog'])->name('single.product');
+    Route::get('/{tea}-{slug}', [App\Http\Controllers\FrontControllers\FrontController::class, 'singleProduct'])->name('single.product');
+
+    Route::post('/message', [App\Http\Controllers\FrontControllers\FrontController::class, 'message'])->name('message');
 
     Auth::routes([
         'register' => false, // Registration Routes...

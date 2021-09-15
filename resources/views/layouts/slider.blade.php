@@ -7,7 +7,7 @@
             style="background-image:url({{ asset('baychay-template/img/slider/baychay-banner.jpg') }})">
 
             <div style="padding-top: 300px">
-                <h1 style="color: #519f10">{{ __('a fragrant high-quality product') }}</h1>
+                <h1 style="color: #519f10">{{ __('a high-quality product without a fragrance') }}</h1>
             </div>
         </div>
         <!-- slider-wrapper end -->

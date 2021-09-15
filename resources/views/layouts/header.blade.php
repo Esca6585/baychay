@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-4">
                     <div class="logo">
-                        <a href="index.html"><img src="{{ asset('baychay-template/img/logo/logo.png') }}"
+                        <a href="{{ route('main-page', app()->getlocale() ) }}"><img src="{{ asset('baychay-template/img/logo/logo.png') }}"
                                 alt="baychay-template/img/logo/logo.png"></a>
                     </div>
                 </div>
@@ -13,17 +13,13 @@
                         <div class="main-menu-area  d-none d-lg-block">
                             <nav>
                                 <ul>
-                                    <li><a
-                                            href="{{ route('main-page', app()->getlocale() ) }}">{{ __('Main Page') }}</a>
+                                    <li><a href="{{ route('main-page', app()->getlocale() ) }}">{{ __('Main Page') }}</a>
                                     </li>
                                     <li>
-                                        <a
-                                            href="{{ route('contact-us', app()->getlocale() ) }}">{{ __('Contact Us') }}</a>
+                                        <a href="{{ route('contact-us', app()->getlocale() ) }}">{{ __('Contact Us') }}</a>
                                     </li>
                                 </ul>
                             </nav>
-
-
                         </div>
 
                         <div class="right-blok-box">

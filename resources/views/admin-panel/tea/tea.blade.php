@@ -121,7 +121,7 @@
                                         class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                                         <li class="breadcrumb-item text-muted">
                                             <a href="{{ route(Route::currentRouteName(), app()->getlocale() ) }}"
-                                                class="text-muted">{{ __('Tea') }}</a>
+                                                class="text-muted">{{ config('app.name') }}</a>
                                         </li>
 
                                     </ul>
@@ -141,7 +141,7 @@
                             <div class="card card-custom">
                                 <div class="card-header flex-wrap py-5">
                                     <div class="card-title">
-                                        <h3 class="card-label">{{ __('Tea') }}
+                                        <h3 class="card-label">{{ config('app.name') }}
                                         </h3>
                                     </div>
                                     <div class="card-toolbar">

@@ -122,9 +122,8 @@
                                         class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                                         <li class="breadcrumb-item text-muted">
                                             <a href="{{ route(Request::segment(3) . '.index', app()->getlocale() ) }}"
-                                                class="text-muted">{{ __('Tea') }}</a>
+                                                class="text-muted">{{ config('app.name') }}</a>
                                         </li>
-
 
                                         <li class="breadcrumb-item text-muted">
                                             <a href="{{ route(Route::currentRouteName(), [app()->getlocale(), $tea->id ] ) }}"

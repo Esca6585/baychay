@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col">
                     <div class="section-title text-center">
-                        <h2 class="titel-2">{{ __('New Products') }}</h2>
+                        <h2 class="titel-2">{{ config('app.name') }}</h2>
                     </div>
                 </div>
             </div>
@@ -17,7 +17,7 @@
                         <div class="col-lg-3">
                             <div class="single-product-wrap">
                                 <div class="product-thum">
-                                    <a href="#product-detail" id="product-link">
+                                    <a href="{{ route('single.product', [ app()->getlocale(), $tea->id, \Str::slug($tea->{ 'name_' . app()->getlocale() }) ]) }}" id="product-link">
                                         @foreach($tea->images as $image)
                                         <img class="primary-image" src="{{ asset($image->thumb) }}"
                                             alt="{{ asset($image->thumb) }}"

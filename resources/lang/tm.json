@@ -26,6 +26,7 @@
     "name": "ady",
     "Name": "Ady",
     "Username": "Ulanyjynyň ady",
+    "Phone number": "Telefon belgisi",
     "First Name": "Ady",
     "Last Name": "Familiýasy",
     "Login": "Içeri gir",
@@ -110,6 +111,7 @@
     "Select All Matching": "Gabat gelýänleri saýla",
     "Something went wrong.": "Bir zatlar ýalňyş gitdi.",
     "The action ran successfully!": "Hereket üstünlikli tamamlandy!",
+    "Your message sent successfully!": "Habaryňyz üstünlikli iberildi!",
     "The government won't let us show you what's behind these doors": "Hökümet, ýapyk gapylar arkasynda nämeler bolup geçýänini bize görkezmez.",
     "This image": "Şu surat",
     "img": "surat",
@@ -451,5 +453,5 @@
     "Copyright": "Awtorlyk hukugy",
     "Message": "Habar",
     "Get in Touch": "Habarlaşyp dur",
-    "a fragrant high-quality product": "hoşboý ys beriji ýokary hilli önüm"
+    "a high-quality product without a fragrance": "hoşboý ys berijisiz ýokary hilli önüm"
 }

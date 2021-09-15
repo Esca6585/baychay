@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col">
                 <div class="section-title text-center">
-                    <h2 class="titel">Our Blog</h2>
+                    <h2 class="titel">BaýÇaý</h2>
                 </div>
             </div>
         </div>
@@ -12,48 +12,49 @@
             <div class="col-lg-4 col-md-6">
                 <div class="singel-our-blog">
                     <div class="blog-thum">
-                        <img src="{{ asset('baychay-template/img/blog/s-1.jpg') }}" alt="">
+                        <img src="{{ asset('assets/baychay/original/photo_2021-08-28_09-37-39 (2).jpg') }}" alt="">
                         <div class="blog-button">
-                            <a href="blog-details.html">Read More</a>
+                        <a href="#blog-details"><i class="flaticon-more-1"></i></a>
+
                         </div>
                     </div>
                     <div class="aritcles-content text-center">
                         <div class="articles-date">
-                            <span>BaýÇaý</span> - {{ \Carbon\Carbon::parse(\Carbon\Carbon::today()->subMonth(7)->subDay(7))->format('M d, Y') }}
+                            <span>{{ config('app.name') }}</span> - {{ \Carbon\Carbon::parse(\Carbon\Carbon::today()->subMonth(7)->subDay(7))->format('M d, Y') }}
                         </div>
-                        <a href="blog-details.html">bir käse çaý rahatlyk çeşmesi</a>
+                        <a href="#blog-details">bir käse çaý rahatlyk çeşmesi</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="singel-our-blog">
                     <div class="blog-thum">
-                        <img src="{{ asset('baychay-template/img/blog/s-2.jpg') }}" alt="">
+                        <img src="{{ asset('assets/baychay/original/photo_2021-08-28_09-37-40.jpg') }}" alt="">
                         <div class="blog-button">
-                            <a href="blog-details.html">Read More</a>
+                        <a href="#blog-details"><i class="flaticon-more-1"></i></a>
                         </div>
                     </div>
                     <div class="aritcles-content text-center">
                         <div class="articles-date">
-                            <span>BaýÇaý</span> - {{ \Carbon\Carbon::parse(\Carbon\Carbon::today()->subMonth(4)->subDay(13))->format('M d, Y') }}
+                            <span>{{ config('app.name') }}</span> - {{ \Carbon\Carbon::parse(\Carbon\Carbon::today()->subMonth(4)->subDay(13))->format('M d, Y') }}
                         </div>
-                        <a href="blog-details.html">ylham bermek çaý söýgüsi</a>
+                        <a href="#blog-details">ylham bermek çaý söýgüsi</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="singel-our-blog">
                     <div class="blog-thum">
-                        <img src="{{ asset('baychay-template/img/blog/s-1.jpg') }}" alt="">
+                        <img src="{{ asset('assets/baychay/original/photo_2021-08-28_09-37-39 (2).jpg') }}" alt="">
                         <div class="blog-button">
-                            <a href="blog-details.html">Read More</a>
+                            <a href="#blog-details"><i class="flaticon-more-1"></i></a>
                         </div>
                     </div>
                     <div class="aritcles-content text-center">
                         <div class="articles-date">
-                            <span>BaýÇaý</span> - {{ \Carbon\Carbon::parse(\Carbon\Carbon::today()->subMonth(2)->subDay(29))->format('M d, Y') }}
+                            <span>{{ config('app.name') }}</span> - {{ \Carbon\Carbon::parse(\Carbon\Carbon::today()->subMonth(2)->subDay(29))->format('M d, Y') }}
                         </div>
-                        <a href="blog-details.html">ertirlik naharyndaky çaýyňyzdan lezzet alyň</a>
+                        <a href="#blog-details">ertirlik naharyndaky çaýyňyzdan lezzet alyň</a>
                     </div>
                 </div>
             </div>

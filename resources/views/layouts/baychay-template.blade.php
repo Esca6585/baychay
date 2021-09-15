@@ -63,6 +63,10 @@
         @yield('provide-section')
         <!-- provide-section end -->
 
+        <!-- single-product start -->
+        @yield('single-product')
+        <!-- single-product end -->
+
         <!-- product-area start -->
         @yield('product-area-2')
         <!-- product-area end -->

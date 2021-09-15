@@ -37,7 +37,7 @@
                         <!--end::Svg Icon-->
                     </span>
                     
-                    <span class="menu-text">{{ __('Tea') }}</span>
+                    <span class="menu-text">{{ config('app.name') }}</span>
                 </a>
             </li>
         </ul>

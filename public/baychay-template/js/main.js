@@ -22,7 +22,7 @@
         autoplay: false,
         dots: false,
         nav: true,
-        navText: ['<i class="icofont icofont-simple-left"></i>', '<i class="icofont icofont-simple-right"></i>'],
+        navText: ['<i class="flaticon2-left-arrow"></i>', '<i class="flaticon2-right-arrow"></i>'],
         responsive: {
             0: {
                 items: 1
@@ -131,7 +131,7 @@
         ScrollUp Active
     -----------------------------------*/
     $.scrollUp({
-        scrollText: '<i class="icofont icofont-simple-up"></i>',
+        scrollText: '<i class="flaticon2-up"></i>',
         easingType: 'linear',
         scrollSpeed: 900,
         animation: 'fade'
@@ -146,11 +146,11 @@
     });
 
     $('.right-blok-box .serch-container i').on('click', function() {
-        if ($(this).hasClass('fa fa-close')) {
-            $(this).removeClass('fa fa-close').addClass('icon-magnifier');
+        if ($(this).hasClass('flaticon2-cross')) {
+            $(this).removeClass('flaticon2-cross').addClass('flaticon2-magnifier-tool');
             $('.blog-search').removeClass('active');
         } else {
-            $(this).removeClass('fa fa-search').addClass('fa fa-close');
+            $(this).removeClass('flaticon2-magnifier-tool').addClass('flaticon2-cross');
             $('.blog-search').addClass('active');
         }
     })
@@ -164,12 +164,12 @@
         max: 120,
         values: [20, 115],
         slide: function(event, ui) {
-            $("#min-price").val('£' + ui.values[0]);
-            $("#max-price").val('£' + ui.values[1]);
+            $("#min-price").val('*' + ui.values[0]);
+            $("#max-price").val('*' + ui.values[1]);
         }
     });
-    $("#min-price").val('£' + $("#price-slider").slider("values", 0));
-    $("#max-price").val('£' + $("#price-slider").slider("values", 1));
+    $("#min-price").val('*' + $("#price-slider").slider("values", 0));
+    $("#max-price").val('*' + $("#price-slider").slider("values", 1));
 
     /*-----------------------------
       showcoupon toggle function

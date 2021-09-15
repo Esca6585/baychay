@@ -26,6 +26,7 @@
     "Name": "Имя",
     "name": "имя",
     "Username": "Имя пользователя",
+    "Phone number": "Номер телефона",
     "First Name": "Имя",
     "Last Name": "Фамилия",
     "Login": "Войти",
@@ -109,6 +110,7 @@
     "Select All": "Выбрать все",
     "Select All Matching": "Выбрать все соответствия",
     "Something went wrong.": "Что-то пошло не так.",
+    "Your message sent successfully!": "Ваше сообщение успешно отправлено!",
     "The action ran successfully!": "Действие выполнено успешно!",
     "The government won't let us show you what's behind these doors": "Правительство не позволит показать вам то, что расположено за этими дверями.",
     "This image": "Это изображение",
@@ -459,5 +461,5 @@
     "Copyright": "Авторское право",
     "Message": "Сообщение",
     "Get in Touch": "Связаться",
-    "a fragrant high-quality product": "ароматный качественный продукт"
+    "a high-quality product without a fragrance": "качественный продукт без запаха"
 }

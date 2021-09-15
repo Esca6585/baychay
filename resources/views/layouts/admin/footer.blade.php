@@ -5,12 +5,12 @@
         <!--begin::Copyright-->
         <div class="text-dark order-2 order-md-1">
             <span class="text-muted font-weight-bold mr-2">{{ date('Y') }}©</span>
-            <a href="{{ url('/') }}" class="text-dark-75 text-hover-primary">BaýÇaý</a>
+            <a href="{{ route('main-page', app()->getlocale() ) }}" class="text-dark-75 text-hover-primary">{{ config('app.name') }}</a>
         </div>
         <!--end::Copyright-->
         <!--begin::Nav-->
         <div class="nav nav-dark">
-            <a href="#about" class="nav-link pl-0 pr-5">About</a>
+            
         </div>
         <!--end::Nav-->
     </div>

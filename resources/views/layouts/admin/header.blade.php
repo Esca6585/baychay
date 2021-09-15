@@ -16,7 +16,7 @@
                     </li>
                     <li class="menu-item {{ Request::is('*/admin/tea*') ? 'menu-item-active' : '' }}">
                         <a href="{{ route('tea.index', app()->getlocale() ) }}" class="menu-link">
-                            <span class="menu-text">{{ __('Tea') }}</span>
+                            <span class="menu-text">{{ config('app.name') }}</span>
                             <i class="menu-arrow"></i>
                         </a>
                     </li>

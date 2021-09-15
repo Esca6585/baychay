@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-6 offset-lg-6">
                 <h3 class="provide-title">BaýÇaý</h3>
-                <h3>hoşboý ys beriji ýokary hilli önüm</h3>
+                <h3>{{ __('a high-quality product without a fragrance') }}</h3>
             </div>
         </div>
     </div>

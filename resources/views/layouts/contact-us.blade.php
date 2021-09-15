@@ -36,19 +36,57 @@
                 <div class="contact-info-area r-pt-40">
                     <h2>{{ __('Get in Touch') }}</h2>
                     <div class="contact-form-area">
-                        <form id="contact-form" action="#email">
+                        <form action="{{ route('message', app()->getlocale() ) }}" method="post">
+                            @csrf
                             <div class="contact-page-form">
                                 <div class="contact-input">
                                     <div class="contact-inner">
-                                        <input name="name" type="text" placeholder="{{ __('First Name') }}" id="first-name">
+                                        <input name="name" type="text" placeholder="{{ __('First Name') }}" id="name"
+                                            value="{{ old('name') }}">
+
+                                        @error('name')
+                                        <div class="fv-plugins-message-container text-danger">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
                                     <div class="contact-inner">
-                                        <input type="text" placeholder="{{ __('Email') }}" id="email" name="email">
+                                        <input name="phone_number" type="text" placeholder="{{ __('Phone number') }}"
+                                            value="{{ old('phone_number') }}">
+
+                                        @error('phone_number')
+                                        <div class="fv-plugins-message-container text-danger">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+
+                                    </div>
+                                    <div class="contact-inner">
+                                        <input type="text" placeholder="{{ __('Email') }}" id="email" name="email"
+                                            value="{{ old('email') }}">
+
+                                        @error('email')
+                                        <div class="fv-plugins-message-container text-danger">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
                                     <div class="contact-inner contact-message">
-                                        <textarea name="message" placeholder="{{ __('Message') }}"></textarea>
+                                        <textarea name="messages"
+                                            placeholder="{{ __('Message') }}">{{ old('messages') }}</textarea>
+
+                                        @error('messages')
+                                        <div class="fv-plugins-message-container text-danger">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
                                 </div>
+
+                                @if(session()->has('success-message'))
+                                    <div class="text-success" id="alert-message">{{ __(session()->get('success-message')) }}</div>
+                                @endif
+
                                 <div class="contact-submit-btn">
                                     <button class="submit-btn" type="submit">{{ __('Send Email') }}</button>
                                     <p class="form-messege"></p>
