@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Tea;
 use App\Models\Message;
 use Carbon\Carbon;
+use Cart;
 use App\Http\Requests\MessageRequest;
 
 
@@ -49,6 +50,11 @@ class FrontController extends Controller
         $message->save();
 
         return back()->with('success-message', 'Your message sent successfully!');
+    }
 
+    public function addShoppingCart(Request $request)
+    {
+        Cart::add($request->id)->associate('App\Models\Tea');
+        return $request->id;
     }
 }

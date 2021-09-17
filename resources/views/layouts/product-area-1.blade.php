@@ -35,7 +35,7 @@
                         @endif
                         
                         <div class="product-action">
-                            <a href="#add-to-cart" class="add-to-cart-btn"><i class="flaticon2-shopping-cart-1"></i></a>
+                            <a class="add-to-cart-btn" id="add-to-cart" data-tea-id="{{ $teaLast->id }}"><i class="flaticon2-shopping-cart-1"></i></a>
                         </div>
                     </div>
                     <div class="product-info text-center">

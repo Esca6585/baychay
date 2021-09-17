@@ -38,7 +38,7 @@
                                     <span class="sale_type">{{ __($tea->sale_type) }}</span>
                                     @endif
                                     <div class="product-action">
-                                        <a href="#add-to-cart" class="add-to-cart-btn"><i
+                                        <a class="add-to-cart-btn" id="add-to-cart" data-tea-id="{{ $tea->id }}"><i
                                                 class="flaticon2-shopping-cart-1"></i></a>
                                     </div>
                                 </div>

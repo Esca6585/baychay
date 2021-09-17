@@ -11,6 +11,22 @@ class Tea extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var string[]
+     */
+    protected $fillable = [
+        'name_tm',
+        'name_en',
+        'name_ru',
+        'images',
+        'price',
+        'sale_price',
+        'discount',
+        'sale_type',
+    ];
+
     protected $casts = [
         'images' => 'object'
     ];
