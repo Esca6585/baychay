@@ -4,8 +4,8 @@
             <div class="row">
                 <div class="col-lg-3 col-md-4">
                     <div class="logo">
-                        <a href="{{ route('main-page', app()->getlocale() ) }}"><img src="{{ asset('baychay-template/img/logo/logo.png') }}"
-                                alt="baychay-template/img/logo/logo.png"></a>
+                        <a href="{{ route('main-page', app()->getlocale() ) }}"><img src="{{ asset('baychay-template/img/logo/baychay-logo.png') }}"
+                                alt="baychay-template/img/logo/baychay-logo.png" width="100px"></a>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-8">

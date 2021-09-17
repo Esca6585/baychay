@@ -17,6 +17,7 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $message->name }}</td>
                 <td>{{ $message->phone_number }}</td>
+                <td>{{ $message->email }}</td>
                 <td>{{ $message->messages }}</td>
                 <td>@include('layouts.admin.action', ['model' => $message])</td>
             </tr>

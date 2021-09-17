@@ -279,6 +279,7 @@
                                                     <th>{{ __('Name') }}</th>
                                                     <th>{{ __('Phone number') }}</th>
                                                     <th>{{ __('Email') }}</th>
+                                                    <th>{{ __('Message') }}</th>
                                                     <th>{{ __('Actions') }}</th>
                                                 </tr>
                                             </thead>
@@ -289,6 +290,7 @@
                                                     <td>{{ $message->name }}</td>
                                                     <td>{{ $message->phone_number }}</td>
                                                     <td>{{ $message->email }}</td>
+                                                    <td>{{ $message->messages }}</td>
                                                     <td>@include('layouts.admin.action', ['model' => $message])</td>
                                                 </tr>
                                                 @endforeach

@@ -1,7 +1,7 @@
 @extends('layouts.admin.admin-template-app')
 
 @section('title')
-{{ __('Tea') }} {{ __( ucfirst( request()->segment(count(request()->segments())) ) ) }}
+{{ is_numeric(__( ucfirst( request()->segment(count(request()->segments())) ) )) ? $tea->{ 'name_' . app()->getlocale() } : '' }}
 @endsection
 
 @section('body')
@@ -154,7 +154,7 @@
                                                 <div class="card-body p-0 rounded px-10 py-15 d-flex align-items-center justify-content-center"
                                                     style="background-color: #1BC5BD;">
                                                     @foreach($tea->images as $image)
-                                                    <img src="{{ asset($image->original) }}" class="mw-100 w-200px"
+                                                    <img src="{{ asset($image->thumb) }}" class="mw-100 w-200px"
                                                         style="transform: scale(1.6);">
                                                     @break
                                                     @endforeach
@@ -191,7 +191,7 @@
                                                 data-images-count="{{ count($tea->images) }}"
                                                 style="background-image: url({{ asset('metronic-template/v7/assets/media/svg/icons/Navigation/Close.svg') }});">
                                                 <div class="image-input-wrapper"
-                                                    style="background-image: url({{ asset($image->original) }})">
+                                                    style="background-image: url({{ asset($image->thumb) }})">
                                                 </div>
 
                                                 <label
@@ -240,7 +240,8 @@
                                             </svg>
                                         </span>
                                     </a>
-                                    <a href="{{ route(Request::segment(3) . '.edit', [app()->getlocale(), $tea->id] ) }}" class="btn btn-sm btn-clean btn-icon mr-2"
+                                    <a href="{{ route(Request::segment(3) . '.edit', [app()->getlocale(), $tea->id] ) }}"
+                                        class="btn btn-sm btn-clean btn-icon mr-2"
                                         title="{{ $tea->id ? __('Edit') : __('Create') }}">
                                         <span class="svg-icon svg-icon-xl">
                                             <span class="svg-icon svg-icon-md">
@@ -260,7 +261,7 @@
                                                     </g>
                                                 </svg>
                                             </span>
-</a>
+                                    </a>
 
                                 </div>
                                 <!--end::Buttons-->

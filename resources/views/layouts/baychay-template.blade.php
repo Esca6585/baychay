@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('baychay-template/img/favicon.ico') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('baychay-template/img/favicon-baychay.ico') }}">
     <!-- All CSS Hear -->
     <link rel="stylesheet" href="{{ asset('baychay-template/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('baychay-template/css/simple-line-icons.css') }}">

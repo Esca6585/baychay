@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         \App\Models\Tea::factory(64)->create();
+        \App\Models\Message::factory(64)->create();
+
         $this->call([
             AdminSeeder::class,
         ]);
