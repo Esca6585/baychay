@@ -19,7 +19,3 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/add-shopping-cart', [App\Http\Controllers\FrontControllers\FrontController::class, 'addShoppingCart']);
-
-Route::get('/set/cookie', [App\Http\Controllers\FrontControllers\FrontController::class, 'setCookie']);
-
-Route::get('/get/cookie', [App\Http\Controllers\FrontControllers\FrontController::class, 'getCookie']);

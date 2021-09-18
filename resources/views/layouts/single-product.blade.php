@@ -37,9 +37,21 @@
                                 @endif
                                 <span class="new-price">
                                     {{ $tea->sale_price ? $tea->sale_price : $tea->price }}
-                                    {{ __('manat') }}</span>
+                                    {{ __('manat') }}
+                                </span>
+                            </div>
+
+                            <div class="product-info">
+                                @if($tea->discount)
+                                <span class="discount">-{{ $tea->discount }}%</span>
+                                
+                                @endif
+                                @if($tea->sale_type)
+                                <span class="sale_type">{{ __($tea->sale_type) }}</span>
+                                @endif
                             </div>
                             <p>{{ __('a high-quality product without a fragrance') }}</p>
+
                             <form class="single-cart">
                                 <div class="quantity">
                                     <input type="number" class="input-box" step="1" min="0" value="1">

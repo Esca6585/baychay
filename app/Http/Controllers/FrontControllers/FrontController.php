@@ -54,6 +54,8 @@ class FrontController extends Controller
 
     public function addShoppingCart(Request $request)
     {
+        return 'dont-add-to-cart';
+        
         $tea = Tea::find($request->id);
 
         $price = $tea->sale_price ? $tea->sale_price : $tea->price;
