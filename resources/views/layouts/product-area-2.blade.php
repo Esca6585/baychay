@@ -69,3 +69,7 @@
         </div>
     </div>
     <!-- product-area-2 end -->
+
+    <div class="alert alert-success fade">
+        add to cart
+    </div>

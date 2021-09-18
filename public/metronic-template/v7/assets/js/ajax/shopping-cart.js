@@ -1,4 +1,4 @@
-$(document).on('click', '#add-to-cart', function (event) {
+$(document).on('click', '#add-to-cart', function () {
     var id = $(this).attr('data-tea-id');
     
     var data = 'id=' + id;
@@ -6,10 +6,9 @@ $(document).on('click', '#add-to-cart', function (event) {
     $.ajax({
         url: '/api/add-shopping-cart',
         data: data,
-        type: 'POST',
-        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        type: 'GET',
         success: function (data) {
-            console.log('add-session = ' + data);
+            console.log(data);
         },
         error: function () {
             console.log('error');

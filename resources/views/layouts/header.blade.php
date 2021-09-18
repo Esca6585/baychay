@@ -43,6 +43,7 @@
                             <div class="mine-cart-box">
                                 <a href="#"><i class="flaticon2-shopping-cart-1"></i><span id="cart-total">2</span></a>
                                 <ul class="mini-cart">
+
                                     <li class="cart-item">
                                         <div class="cart-image">
                                             <a href="single-product.html"><img
