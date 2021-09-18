@@ -1,5 +1,6 @@
+<div id="products">
     <!-- product-area-2 start -->
-    <div class="product-area section-bg ptb-100" id="products">
+    <div class="product-area section-bg ptb-100">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -17,11 +18,11 @@
                         <div class="col-lg-3">
                             <div class="single-product-wrap">
                                 <div class="product-thum">
-                                    <a href="{{ route('single.product', [ app()->getlocale(), $tea->id, \Str::slug($tea->{ 'name_' . app()->getlocale() }) ]) }}" id="product-link">
+                                    <a href="{{ route('single.product', [ app()->getlocale(), $tea->id, \Str::slug($tea->{ 'name_' . app()->getlocale() }) ]) }}"
+                                        id="product-link">
                                         @foreach($tea->images as $image)
                                         <img class="primary-image" src="{{ asset($image->thumb) }}"
-                                            alt="{{ asset($image->thumb) }}"
-                                        >
+                                            alt="{{ asset($image->thumb) }}">
                                         @break
                                         @endforeach
 
@@ -70,6 +71,4 @@
     </div>
     <!-- product-area-2 end -->
 
-    <div class="alert alert-success fade">
-        add to cart
-    </div>
+</div>

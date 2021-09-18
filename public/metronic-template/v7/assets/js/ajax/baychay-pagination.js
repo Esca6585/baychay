@@ -1,6 +1,6 @@
 $(document).on('click', '.page-numbers', function (event) {
     event.preventDefault();
-    
+
     var page = $(this).attr('href').split('page=')[1];
 
     getMainMoreData(page);
