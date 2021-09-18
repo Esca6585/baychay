@@ -44,25 +44,6 @@
     <link rel="stylesheet" href="{{ asset('baychay-template/css/pagination-admin.css') }}">
     <!-- end pagination  -->
 
-    <style>
-        .odd {
-            background: var(--light);
-        }
-
-        .even {
-            background: var(--white);
-        }
-
-        .alert-fixed {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            width: 20%;
-            z-index: 9999;
-            border-radius: 0px
-        }
-    </style>
-
 </head>
 <!--end::Head-->
 <!--begin::Body-->

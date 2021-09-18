@@ -54,3 +54,12 @@ li, a {
 .flaticon2-right-arrow, .flaticon2-left-arrow {
   color: #222;
 }
+
+.alert-fixed {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 20%;
+  z-index: 9999;
+  border-radius: 0px
+}
