@@ -22,13 +22,34 @@ class TeaFactory extends Factory
      */
     public function definition()
     {
-        $sale_name = ['0', '10', '20', '25', '50', '0'];
-        $name_tm = ['Çaý', 'Gara Çaý', 'Gök Çaý', 'Sary Çaý', 'Goňur Çaý', 'Gyzyl çaý'];
-        $name_en = ['Tea', 'Black Tea', 'Green Tea', 'Yellow Tea', 'Brown Tea', 'Red Tea'];
-        $name_ru = ['Чай', 'Черный Чай', 'Зеленый Чай', 'Желтый Чай', 'Коричневый Чай', 'Красный Чай'];
+        $sale_name = ['0', '15', '0', '25'];
+        
+        $name_tm = ['Iri ýaprakly gök çaý', 'Ownuk ýaprakly gök çaý', 'Iri ýaprakly gara çaý', 'Ownuk ýaprakly gara çaý'];
+        $name_en = ['Large leaved green tea', 'Small leaved green tea', 'Large leaved black tea', 'Small leaved black tea',];
+        $name_ru = ['Крупнолистный зеленый чай', 'Мелколистный зеленый чай', 'Крупнолистный черный чай', 'Мелколистный черный чай'];
 
-        $random = mt_rand(0, 5);
-        $price = mt_rand(25, 100);
+        $images = [
+            [
+                ['thumb' => 'assets/tea/baychay/baychay-iri-yaprakly-gok-chay-1-on.jpg',   'original' => 'assets/tea/baychay/baychay-iri-yaprakly-gok-chay-1-on.jpg'],
+                ['thumb' => 'assets/tea/baychay/baychay-iri-yaprakly-gok-chay-2-arka.jpg', 'original' => 'assets/tea/baychay/baychay-iri-yaprakly-gok-chay-2-arka.jpg'],
+            ],
+            [
+                ['thumb' => 'assets/tea/baychay/baychay-ownuk-yaprakly-gok-chay-1-on.jpg',   'original' => 'assets/tea/baychay/baychay-ownuk-yaprakly-gok-chay-1-on.jpg'],
+                ['thumb' => 'assets/tea/baychay/baychay-ownuk-yaprakly-gok-chay-2-arka.jpg', 'original' => 'assets/tea/baychay/baychay-ownuk-yaprakly-gok-chay-2-arka.jpg'],
+            ],
+            [
+                ['thumb' => 'assets/tea/baychay/baychay-iri-yaprakly-gara-chay-1-on.jpg',   'original' => 'assets/tea/baychay/baychay-iri-yaprakly-gara-chay-1-on.jpg'],
+                ['thumb' => 'assets/tea/baychay/baychay-iri-yaprakly-gara-chay-2-arka.jpg', 'original' => 'assets/tea/baychay/baychay-iri-yaprakly-gara-chay-2-arka.jpg'],
+            ],
+            [
+                ['thumb' => 'assets/tea/baychay/baychay-ownuk-yaprakly-gara-chay-1-on.jpg',   'original' => 'assets/tea/baychay/baychay-ownuk-yaprakly-gara-chay-1-on.jpg'],
+                ['thumb' => 'assets/tea/baychay/baychay-ownuk-yaprakly-gara-chay-2-arka.jpg', 'original' => 'assets/tea/baychay/baychay-ownuk-yaprakly-gara-chay-2-arka.jpg'],
+            ],
+        ];
+
+
+        $random = mt_rand(0, 3);
+        $price = mt_rand(10, 30);
 
         $percent = null;
 
@@ -40,10 +61,7 @@ class TeaFactory extends Factory
             'name_tm' => $name_tm[$random],
             'name_en' => $name_en[$random],
             'name_ru' => $name_ru[$random],
-            'images' => array(
-                ['thumb' => 'assets/tea/baychay/baychay-tea-1-650x770.jpg', 'original' => 'assets/tea/baychay/baychay-tea-1.jpg',],
-                ['thumb' => 'assets/tea/baychay/baychay-tea-2-650x770.jpg', 'original' => 'assets/tea/baychay/baychay-tea-2.jpg'],
-            ),
+            'images' => $images[$random],
             'price' => $price,
             'sale_price' => $percent,
             'sale_type' => mt_rand(0, 1) == 0 ? 'New' : '',

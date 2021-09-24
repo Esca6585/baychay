@@ -34,7 +34,7 @@ class FrontController extends Controller
     public function singleProduct($lang, Tea $tea, $slug)
     {
         $trendTeas = Tea::take(4)->where('sale_type', 'New')->inRandomOrder()->get();
-
+        
         return view('front-end.single-product', compact('tea','trendTeas'));
     }
 
@@ -54,45 +54,6 @@ class FrontController extends Controller
 
     public function addShoppingCart(Request $request)
     {
-        return 'dont-add-to-cart';
-        
-        $tea = Tea::find($request->id);
-
-        $price = $tea->sale_price ? $tea->sale_price : $tea->price;
-
-        $tax = 0;
-
-        $teaData = [
-            'id' => $tea->id,
-            'name_tm' => $tea->name_tm,
-            'name_en' => $tea->name_en,
-            'name_ru' => $tea->name_ru,
-            'images' => $tea->images,
-            'price' => $tea->price,
-            'sale_price' => $tea->sale_price,
-            'discount' => $tea->discount,
-            'sale_type' => $tea->sale_type
-        ];
-
-        Cart::add([
-            ['id' => $tea->id, 'name' => $tea->name_tm, 'qty' => 1, 'price' => $price, 'weight' => 550, 'options' => $teaData ]
-        ]);
-
-        return response()->json(['success-message' => 'Tea added in Cart']);
-    }
-
-    public function setCookie(Request $request){
-        $minutes = 1;
-        
-        $response = new Response('Set Cookie');
-        
-        $response->withCookie(cookie('cart', $request->id, $minutes));
-
-        return $response;
-    }
-
-    public function getCookie(Request $request){
-        $value = $request->cookie('cart');
-        echo $value;
+        return 'shopping-cart-dont-work';
     }
 }

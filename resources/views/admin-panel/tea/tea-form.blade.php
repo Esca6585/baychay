@@ -14,22 +14,19 @@
     <!--begin::Header Mobile-->
     <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
         <!--begin::Logo-->
-        <a href="index.html" class="brand-logo">
-            <img alt="metronic-template/v7/assets/media/logos/logo-light.png"
-                src="{{ asset('metronic-template/v7/assets/media/logos/logo-light.png') }}" />
-        </a>
-        <!--end::Logo-->
+        @include('layouts.admin.logo')
+                    <!--end::Logo-->
         <!--begin::Toolbar-->
         <div class="d-flex align-items-center">
             <!--begin::Aside Mobile Toggle-->
-            <button class="btn p-0 burger-icon burger-icon-left" id="kt_aside_mobile_toggle">
+            <button class="btn p-0 burger-icon" id="kt_aside_mobile_toggle">
                 <span></span>
             </button>
             <!--end::Aside Mobile Toggle-->
             <!--begin::Header Menu Mobile Toggle-->
-            <button class="btn p-0 burger-icon ml-4" id="kt_header_mobile_toggle">
+            <!-- <button class="btn p-0 burger-icon ml-4" id="kt_header_mobile_toggle">
                 <span></span>
-            </button>
+            </button> -->
             <!--end::Header Menu Mobile Toggle-->
             <!--begin::Topbar Mobile Toggle-->
             <button class="btn btn-hover-text-primary p-0 ml-2" id="kt_header_mobile_topbar_toggle">
@@ -63,10 +60,7 @@
                 <!--begin::Brand-->
                 <div class="brand flex-column-auto" id="kt_brand">
                     <!--begin::Logo-->
-                    <a href="index.html" class="brand-logo">
-                        <img alt="metronic-template/v7/assets/media/logos/logo-light.png"
-                            src="{{ asset('metronic-template/v7/assets/media/logos/logo-light.png') }}" />
-                    </a>
+                    @include('layouts.admin.logo')
                     <!--end::Logo-->
                     <!--begin::Toggle-->
                     <button class="brand-toggle btn btn-sm px-0" id="kt_aside_toggle">
@@ -315,7 +309,7 @@
                                         </div>
 
                                         <div class="card-footer d-flex justify-content-between">
-                                            <a href="{{ url()->previous() }}"
+                                            <a href="{{ route(Request::segment(3) . '.index', app()->getlocale() ) }}"
                                                 class="btn btn-sm btn-clean btn-icon mr-2">
                                                 <span class="svg-icon svg-icon-xl">
                                                     <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
@@ -331,10 +325,10 @@
                                             </a>
 
                                             <button type="submit" title="{{ $tea->id ? __('Edit') : __('Create') }}"
-                                                class="btn btn-primary font-weight-bolder">
+                                                class="btn {{ $tea->id ? 'btn-warning' : 'btn-primary' }} font-weight-bolder">
                                                 <span class="svg-icon svg-icon-md">
                                                     @if($tea->id)
-                                                    <span class="svg-icon svg-icon-md">
+                                                    <span class="svg-icon svg-icon-md {{ $tea->id ? 'svg-icon-dark' : '' }}">
                                                         <svg xmlns="http://www.w3.org/2000/svg"
                                                             xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
                                                             height="24px" viewBox="0 0 24 24" version="1.1">
@@ -373,7 +367,9 @@
                                                     </svg>
                                                     @endif
                                                 </span>
-                                                {{ $tea->id ? __('Edit') : __('Create') }}
+                                                <span class="{{ $tea->id ? 'text-dark' : '' }}">
+                                                    {{ $tea->id ? __('Edit') : __('Create') }}
+                                                </span>
                                             </button>
                                         </div>
                                     </form>

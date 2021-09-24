@@ -12,7 +12,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="singel-our-blog">
                     <div class="blog-thum">
-                        <img src="{{ asset('assets/baychay/original/photo_2021-08-28_09-37-39 (2).jpg') }}" alt="">
+                        <img src="{{ asset('baychay-template/img/blog/blog-1.jpg') }}" alt="baychay-template/img/blog/blog-1.jpg">
                         <div class="blog-button">
                         <a href="#blog-details"><i class="flaticon-more-1"></i></a>
 
@@ -29,7 +29,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="singel-our-blog">
                     <div class="blog-thum">
-                        <img src="{{ asset('assets/baychay/original/photo_2021-08-28_09-37-40.jpg') }}" alt="">
+                        <img src="{{ asset('baychay-template/img/blog/blog-2.jpg') }}" alt="baychay-template/img/blog/blog-2.jpg">
                         <div class="blog-button">
                         <a href="#blog-details"><i class="flaticon-more-1"></i></a>
                         </div>
@@ -45,7 +45,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="singel-our-blog">
                     <div class="blog-thum">
-                        <img src="{{ asset('assets/baychay/original/photo_2021-08-28_09-37-39 (2).jpg') }}" alt="">
+                        <img src="{{ asset('baychay-template/img/blog/blog-3.jpg') }}" alt="baychay-template/img/blog/blog-3.jpg">
                         <div class="blog-button">
                             <a href="#blog-details"><i class="flaticon-more-1"></i></a>
                         </div>

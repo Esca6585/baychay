@@ -45,7 +45,7 @@ function getPaginationData(pagination) {
     });
 }
 
-$("#datatable_search").keyup(function () {
+$("#datatable_search").on('keyup',function(){
     var search = $("#datatable_search").val();
     var pagination = $("#datatable_length").val();
     var page = $('.page-link').attr('href').split('page=')[1];

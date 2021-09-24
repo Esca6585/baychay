@@ -19,9 +19,9 @@ class CreateTeasTable extends Migration
             $table->string('name_en');
             $table->string('name_ru');
             $table->json('images');
-            $table->float('price');
-            $table->float('sale_price')->nullable();
-            $table->string('discount')->default(0);
+            $table->integer('price');
+            $table->integer('sale_price')->nullable();
+            $table->integer('discount')->default(0);
             $table->string('sale_type')->nullable();
             $table->timestamps();
         });

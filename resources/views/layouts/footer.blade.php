@@ -10,8 +10,10 @@
                         <ul class="footer-address">
                             <li>
                                 <i class="flaticon2-pin"></i>
-                                <p class="desc_call mb-0">Türkmenistan, Aşgabat şäheri, Büzmeýin etraby, Gurtly
-                                    ýaşaýyş toplumy, jaý 41</p>
+                                <p class="desc_call mb-0 d-flex">
+                                    Türkmenistan, Aşgabat şäheri, Büzmeýin etraby, Gurtly ýaşaýyş
+                                    toplumy, jaý 41
+                                </p>
                             </li>
                             <li>
                                 <i class="flaticon2-black-back-closed-envelope-shape"></i>
@@ -31,7 +33,7 @@
                     <!-- single-footer-info end -->
                 </div>
 
-                
+
                 <div class="col">
                     <!-- single-footer-info start -->
                     <div class="single-footer-info singel-corporat-wrap">
@@ -44,7 +46,7 @@
                     </div>
                     <!-- single-footer-info end -->
                 </div>
-                
+
                 <div class="col">
                     <!-- single-footer-info start-->
                     <div class="single-footer-info singel-corporat-wrap">
@@ -52,21 +54,23 @@
                         <ul class="sidebar-post">
                             <li>
                                 <div class="post-img">
-                                    <a href="#"><img src="{{ asset('assets/baychay/original/photo_2021-08-28_09-37-38 (2).jpg') }}"
-                                            alt="{{ asset('baychay-template/img/blog/s-1.jpg') }}"></a>
+                                    <a href="#blog-details"><img
+                                            src="{{ asset('baychay-template/img/blog/blog-1.jpg') }}"
+                                            alt="baychay-template/img/blog/blog-1.jpg"></a>
                                 </div>
                                 <div class="post-text">
-                                    <h4><a href="#">ertirlik naharyndaky çaýyňyzdan lezzet alyň</a></h4>
+                                    <h4><a href="#blog-details">ertirlik naharyndaky çaýyňyzdan lezzet alyň</a></h4>
                                     <span>{{ \Carbon\Carbon::parse(\Carbon\Carbon::today()->subMonth(2)->subDay(29))->format('M d, Y') }}</span>
                                 </div>
                             </li>
                             <li>
                                 <div class="post-img">
-                                    <a href="#"><img src="{{ asset('assets/baychay/original/photo_2021-08-28_09-37-39 (2).jpg') }}"
-                                            alt="{{ asset('baychay-template/img/blog/s-2.jpg') }}"></a>
+                                    <a href="#blog-details"><img
+                                            src="{{ asset('baychay-template/img/blog/blog-3.jpg') }}"
+                                            alt="baychay-template/img/blog/blog-3.jpg"></a>
                                 </div>
                                 <div class="post-text">
-                                    <h4><a href="#">bir käse çaý rahatlyk çeşmesi</a></h4>
+                                    <h4><a href="#blog-details">bir käse çaý rahatlyk çeşmesi</a></h4>
                                     <span>{{ \Carbon\Carbon::parse(\Carbon\Carbon::today()->subMonth(7)->subDay(7))->format('M d, Y') }}</span>
                                 </div>
                             </li>
@@ -82,21 +86,23 @@
                         <ul class="sidebar-post">
                             <li>
                                 <div class="post-img">
-                                    <a href="#"><img src="{{ asset('assets/baychay/original/photo_2021-08-28_09-37-40.jpg') }}"
-                                            alt="{{ asset('baychay-template/img/blog/s-1.jpg') }}"></a>
+                                    <a href="#blog-details"><img src="{{ asset('baychay-template/img/blog/s-1.jpg') }}"
+                                            alt="baychay-template/img/blog/s-1.jpg"></a>
                                 </div>
                                 <div class="post-text">
-                                    <h4><a href="#">{{ __('a high-quality product without a fragrance') }}</a></h4>
+                                    <h4><a
+                                            href="#blog-details">{{ __('a high-quality product without a fragrance') }}</a>
+                                    </h4>
                                     <span>{{ \Carbon\Carbon::parse(\Carbon\Carbon::today()->subMonth(8)->subDay(16))->format('M d, Y') }}</span>
                                 </div>
                             </li>
                             <li>
                                 <div class="post-img">
-                                    <a href="#"><img src="{{ asset('assets/baychay/original/baychay-tea-original-1-650x770.jpg') }}"
-                                            alt="{{ asset('baychay-template/img/blog/s-2.jpg') }}"></a>
+                                    <a href="#blog-details"><img src="{{ asset('baychay-template/img/blog/s-2.jpg') }}"
+                                            alt="baychay-template/img/blog/s-2.jpg"></a>
                                 </div>
                                 <div class="post-text">
-                                    <h4><a href="#">ylham bermek çaý söýgüsi</a></h4>
+                                    <h4><a href="#blog-details">ylham bermek çaý söýgüsi</a></h4>
                                     <span>{{ \Carbon\Carbon::parse(\Carbon\Carbon::today()->subMonth(5)->subDay(14))->format('M d, Y') }}</span>
                                 </div>
                             </li>
@@ -104,7 +110,7 @@
                     </div>
                     <!-- single-footer-info end-->
                 </div>
-                
+
             </div>
         </div>
     </div>

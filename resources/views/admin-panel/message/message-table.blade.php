@@ -19,7 +19,7 @@
                 <td>{{ $message->phone_number }}</td>
                 <td>{{ $message->email }}</td>
                 <td>{{ $message->messages }}</td>
-                <td>@include('layouts.admin.action', ['model' => $message])</td>
+                <td>@include('admin-panel.message.message-action', ['model' => $message])</td>
             </tr>
             @endforeach
         </tbody>

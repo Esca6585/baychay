@@ -20,6 +20,12 @@
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
+                    <li class="menu-item {{ Request::is('*/admin/message*') ? 'menu-item-active' : '' }}">
+                        <a href="{{ route('message.index', app()->getlocale() ) }}" class="menu-link">
+                            <span class="menu-text">{{ __('Message') }}</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                    </li>
                 </ul>
                 <!--end::Header Nav-->
             </div>
